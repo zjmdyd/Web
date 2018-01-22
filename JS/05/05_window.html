@@ -1,0 +1,109 @@
+<!-- 
+所有浏览器都支持 window 对象。它表示浏览器窗口。
+
+所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。
+
+全局变量是 window 对象的属性。
+
+全局函数是 window 对象的方法。
+
+甚至 HTML DOM 的 document 也是 window 对象的属性之一：
+
+
+body.offsetHeight ：body总高度。
+
+body.offsetWidth ：body总宽度。
+
+body.clientHeight ：body展示的高度；表示body在浏览器内显示的区域高度。
+
+body.clientWidth ：body展示的宽度；表示body在浏览器内显示的区域宽度。
+
+对于Internet Explorer、Chrome、Firefox、Opera 以及 Safari：
+
+window.innerHeight - 浏览器窗口的内部高度
+window.innerWidth - 浏览器窗口的内部宽度
+对于 Internet Explorer 8、7、6、5：
+
+document.documentElement.clientHeight
+document.documentElement.clientWidth
+或者
+
+document.body.clientHeight
+document.body.clientWidth
+
+ -->
+<!DOCTYPE html>
+<html>
+<p id="demo"></p>
+
+<body>
+    <script type="text/javascript">
+    // 实用的 JavaScript 方案（涵盖所有浏览器）：
+    var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+    x = document.getElementById("demo")
+    x.innerHTML = "浏览器的内部窗口宽度: " + w + "，高度: " + h + "。"
+
+    // window.open("https://www.baidu.com")
+    // screen.availHeight = screen.height - 任务栏高度
+    document.write("屏幕宽度screen.width: " + screen.width + "<br />")
+    document.write("屏幕高度screen.height: " + screen.height + "<br />")
+    document.write("屏幕可用宽度screen.availWidth: " + screen.availWidth + "<br />")
+    document.write("屏幕可用高度screen.availHeight: " + screen.availHeight + "<br />")
+    document.write("<br />")
+
+    // 工具栏高度 = window.outerHeight - window.innerHeight
+    document.write("浏览器宽度window.outerWidth: " + window.outerWidth + "<br />") // 浏览器宽度
+    document.write("浏览器高度window.outerHeight: " + window.outerHeight + "<br />") // 浏览器高度
+    document.write("<br />")
+
+    document.write("页面可用宽度window.innerWidth: " + window.innerWidth + "<br />")
+    document.write("页面可用高度window.innerHeight: " + window.innerHeight + "<br />") // 浏览器可用高度(去掉工具栏、包含滚动条)
+    document.write("<br />")
+
+    document.write("*****XHTML***" + "<br />")
+    document.write("document.documentElement.clientWidth: " + document.documentElement.clientWidth + "<br />")
+    document.write("document.documentElement.clientHeight: " + document.documentElement.clientHeight + "<br />")
+    document.write("<br />")
+
+    document.write("document.documentElement.offsetWidth: " + document.documentElement.offsetWidth + "<br />")
+    document.write("document.documentElement.offsetHeight: " + document.documentElement.offsetHeight + "<br />")
+    document.write("<br />")
+
+    document.write("***** 此方法是获取当前行的有效高度 ***" + "<br />")
+    document.write("document.body.offsetWidth: " + document.body.offsetWidth + "<br />")
+    document.write("document.body.offsetHeight: " + document.body.offsetHeight + "<br />")
+
+    document.write("<br />")
+
+    document.write("***** 此方法是获取当前行的有效高度 ***" + "<br />")
+    document.write("document.body.clientWidth: " + document.body.clientWidth + "<br />")
+    document.write("document.body.clientHeight: " + document.body.clientHeight + "<br />")
+    document.write("<br />")
+
+    document.write("*****黄金分隔线***" + "<br />")
+    document.write('location.pathname: ' + location.pathname + '<br />')
+    document.write('location.href: ' + location.href + '<br />')
+    document.write('location.hostname: ' + location.hostname + '<br />')
+
+    function newPage(type) {
+        if (type == 0) {
+            window.open('http://www.baidu.com', '百度')
+        } else if (type == 1) {
+            window.location.assign('http://www.w3school.com.cn')
+        } else if (type == 2) {
+            history.goBack()
+        } else if (type == 3) {
+            history.forward()
+        }
+    }
+
+    </script>
+    <br />
+    <input type="button" value="打开新页面" onclick="newPage(0)">
+    <input type="button" value="加载新页面" onclick="newPage(1)">
+    <input type="button" value="回退" onclick="newPage(2)">
+    <input type="button" value="next" onclick="newPage(3)">
+</body>
+
+</html>
