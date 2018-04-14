@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>权重</title>
+	<style type="text/css">
+		div {width: 100px; height: 100px; background: #f00}
+		#box {background: #0f0}
+		.fox {background: #00f}
+		.aa {width: 300px; height: 300px; background: #0ff; margin-top: 20px;}
+		.aa {width: 300px; height: 300px; background: #0ff;}	/*覆盖上面的aa选择符 但margin-top仍然起作用*/
+	</style>
+</head>
+<body>
+	<div id="box" class="fox"></div>
+	<div class="aa"></div>
+</body>
+</html>
+<!-- 高权重覆盖低权重 -->
+<!-- 权重相同的后定义的覆盖前定义的 -->
+<!-- 
+三、权重计算规则
+
+第一等：代表内联样式，如: style=””，权值为1000。
+第二等：代表ID选择器，如：#content，权值为0100。
+第三等：代表类，伪类和属性选择器，如.content，权值为0010。
+第四等：代表类型选择器和伪元素选择器，如div p，权值为0001。
+通配符、子选择器、相邻选择器等的。如*、>、+,权值为0000。
+继承的样式没有权值。
+ -->
