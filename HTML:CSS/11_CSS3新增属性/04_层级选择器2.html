@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	/* 相邻兄弟选择器*/
+	.nv1 li+li {background: #f00;}	/*选中li后面的li*/
+	.nv2 .o1+li {background: #ff0;}
+</style>
+</head>
+<body>
+	<h1>列表A</h1>
+	<ul class="nv1">
+		<li>列表项目1</li>
+		<li>列表项目2</li>
+		<li>列表项目3</li>
+		<li>列表项目4</li>
+		<li>列表项目5</li>
+		<li>列表项目6</li>
+		<li>列表项目7</li>
+		<li>列表项目8</li>
+		<li>列表项目9</li>
+		<li>列表项目10</li>
+	</ul>
+	<h1>列表B</h1>
+	<ul class="nv2">		
+		<li class="o1">列表项目1</li>
+		<li>列表项目2</li>
+		<li class="o1">列表项目3</li>
+		<li>列表项目4</li>
+		<li class="o1">列表项目5</li>
+		<li>列表项目6</li>
+		<li class="o1">列表项目7</li>
+		<li>列表项目8</li>
+		<li class="o1">列表项目9</li>
+		<li>列表项目10</li>		
+	</ul>
+</body>
+</html>

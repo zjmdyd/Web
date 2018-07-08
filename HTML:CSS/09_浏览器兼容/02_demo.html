@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+		.inpt {display: block; width: 80px; height: 30px;border: 1px #000 solid; background: #f0f; color: #fff; text-align: center; line-height: 30px; text-decoration: none; font-size: 14px;}
+		.box1 {width: 50%; height: 100px; background: #f00; float: left;}
+		.box2 {width: 50%; height: 100px; background: #ff0; float: left; clear: right;}
+		/*IE6下50%+50%大雨100%,导致不会在一行显示，解决办法:clear:right*/
+		.box {width: 100px; height: 100px; background: #f00; opacity: .5; position: absolute; top: 200px; filter: alpha(opacity=50)}
+		/*IE6下透明度不认,解决办法:*/
+		.box4 {width: 50px; height: 50px; background: #ff0;}
+		/*opcaity带来的透明回继承给子元素*/
+	</style>
+</head>
+<body>
+	<a href="#" class="inpt">提交</a>
+	<input type="submit" value="提交" class="inpt">
+	<!-- 统一按钮样式 -->
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<h1 style="cursor: hand;">北京欢迎你</h1>
+	<h1 style="cursor: pointer;">北京欢迎你</h1>
+	<!--  style="cursor: hand;" 兼容的浏览器比较少(IE5.5下才起作用),选择style="cursor: pointer;" 可以兼容更多的浏览器-->
+	<div class="box">
+		<div class="box4"></div>
+	</div>
+</body>
+</html>

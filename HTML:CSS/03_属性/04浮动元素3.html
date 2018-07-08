@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	/* 解决高度塌陷方法1:在父div加 overflow: hidden;
+	overflow: hidden; bfc作用
+	*/
+	.box {width: 960px; border: 5px #000 solid;}
+	.box_l {width: 480px; height: 240px; background: #f00; float: left;}
+	.box_c, .box_r {width: 240px; height: 240px; float: left;}
+	.box_c {background: #f1f1f1;}
+	.box_r {background: #00f url(images/eg_bulbon.gif) no-repeat right bottom}
+	/* 解决高度塌陷方法2:在浮动元素下方加一个空div, 以下两种写法都可以 */ 
+	/*.clean {clear: both; height: 0; overflow: hidden;}*/
+	.clean {clear: both; height: 0; font-size: 0;}
+</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box_l"></div>
+		<div class="box_c"></div>
+		<div class="box_r"></div>
+		<div class="clean"></div>
+	</div>
+
+</body>
+</html>
