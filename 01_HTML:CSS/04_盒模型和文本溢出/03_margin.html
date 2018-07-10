@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		/**{margin: 0; padding: 0} 去掉默认的maring padding值 */ 
+		.box1 {width: 100px; height: 100px; background: #f00; margin-bottom: 100px;}
+		.box2 {width: 200px; height: 200px; background: #0f0; margin-top: 200px;}
+		.box3 {width: 200px; height: 200px; background: #0ff; overflow: hidden;}
+		.box4 {width: 100px; height: 100px; background: #00f; margin-top: 20px;}
+		/* 相邻两个兄弟元素在垂直方向的margin值相遇时会出现融合的情况，融合时取较两者中较大值*/
+		/* 子元素设置margin是，子元素的margin值会传递到父级，解决办法:overflow:hidden*/
+		/* {margin: 0 auto;} 在浏览器中横向居中 */
+		h1 {width: 800px; height: 200px; background: #0ff; text-align: center; line-height: 200px; margin: 0 auto;}
+		h2 {width: 800px; height: 200px; background: #0ff; text-align: center; line-height: 200px; }
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3">
+		<div class="box4"></div>
+	</div>
+	<h1>北京欢迎你</h1>
+	<h2>北京欢迎你2</h2>
+</body>
+</html>

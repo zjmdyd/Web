@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script type="text/javascript">
+    /*
+	所有 JavaScript 数字均为 64 位
+	JavaScript 不是类型语言。与许多其他编程语言不同，JavaScript 不定义不同类型的数字，比如整数、短、长、浮点等等。
+	JavaScript 中的所有数字都存储为根为 10 的 64 位（8 比特），浮点数。
+	
+	整数（不使用小数点或指数计数法）最多为 15 位。
+	小数的最大位数是 17，但是浮点运算并不总是 100% 准确：
+    */
+    document.write("<p> 0.2 + 0.1 = ")
+    var x = 0.2 + 0.1
+    document.write(x + "</p>")
+    var value = 15
+    document.write(value.toString(2) + "<br />")
+    document.write(value.toString(8) + "<br />")
+    document.write(value.toString(16) + "<br />")
+
+    /*
+	注释：如果逻辑对象无初始值或者其值为 0、-0、null、""、false、undefined 或者 NaN，那么对象的值为 false。否则，其值为 true（即使当自变量为字符串 "false" 时）！
+    */
+    var mBool = new Boolean("false")	// true
+    document.write(mBool + "<br />")
+
+    var str = "10.01"
+    document.write(str.valueOf() + "<br />")
+    var a1 = Math.log(2) / Math.log(4)	// log42
+    document.write(a1 + "<br />")
+    /*
+	当您使用该 RegExp 对象在一个字符串中检索时，将寻找的是字符 "e"。
+	test() 方法检索字符串中的指定值。返回值是 true 或 false。
+	exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
+    */
+    var mStr = "The best things in life are free"
+    var reg1 = new RegExp("e") 
+    document.write(reg1.test(mStr) + "<br />")	// true
+    var reg2 = new RegExp("z") 
+    document.write(reg2.test(mStr) + "<br />")	// false
+    /*
+	如果需要找到所有某个字符的所有存在，则可以使用 "g" 参数 ("global")。
+    */
+    var reg2 = new RegExp("e", "g")
+    do{
+    	result = reg2.exec(mStr)
+    	document.write(result)
+    }while(result != null)
+
+    reg1.compile('d')
+    document.write('<br />' + reg1.test(mStr))
+    </script>
+</body>
+
+</html>
