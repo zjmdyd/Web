@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.box {position: relative;}
+		.btn {background: #4CAF50; padding: 16px; color: white; font-size: 16px; cursor: pointer; border: none;}
+		.btn:hover {background: #3e8e41;}
+
+		.box-content {display: none; position: absolute; background: #f9f9f9; min-width: 160px;}
+		.box:hover .box-content {display: block;}
+		.box-content a {display: block; color: black; padding: 12px 16px; text-decoration: none;}
+		.box-content a:hover {background: #f1f1f1; text-decoration: underline;}
+	</style>
+</head>
+<body>
+	<div class="box" style="float: left;">
+		<button class="btn">左</button>
+		<div class="box-content" style="left: 0">
+			<a href="#">菜鸟教程 1</a>
+			<a href="#">菜鸟教程 1</a>
+			<a href="#">菜鸟教程 1</a>
+		</div>
+	</div>
+	<div class="box" style="float: right;">
+		<button class="btn">右</button>
+		<div class="box-content" style="right: 0">
+			<a href="#">菜鸟教程 1</a>
+			<a href="#">菜鸟教程 1</a>
+			<a href="#">菜鸟教程 1</a>
+		</div>
+	</div>
+</body>
+</html>

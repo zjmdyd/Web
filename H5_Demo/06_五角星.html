@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	.FiveStar {
+		width: 0;
+		height: 0;
+		margin: 100px 20px;
+		border-left: 80px solid transparent;
+		border-right: 80px solid transparent;
+		border-bottom: 60px solid #ff0012;
+		transform: rotate(35deg);
+	}
+	/*.FiveStar:before {
+		height: 0;
+		width: 0;
+		content: '';
+		position: absolute;
+		top: -35px;
+		left: -50px;
+		border-bottom: 60px solid #0f0;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		transform: rotate(-35deg);
+	}*/
+	.FiveStar:after {
+		width: 0;
+		height: 0;
+		content: '';
+		position: absolute;
+		top: 3px;
+		left: -85px;
+		border-left: 80px solid transparent;
+		border-right: 80px solid transparent;
+		border-bottom: 60px solid #00f;
+		transform: rotate(-70deg);
+	}
+	a::after{
+    content: "(" attr(href) ")";
+}
+</style>
+</head>
+<body>
+	<a href="http://www.cnblogs.com/starof">starof</a>
+	<!-- <div class="FiveStar"></div> -->
+</body>
+</html>

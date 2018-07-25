@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+		如果属性有'-'号，就写成驼峰的形式（如textAlign）  如果想保留 - 号，就中括号的形式  element.style['text-align'] = '100px';
+	 -->
+	<script type="text/javascript">
+		function changeTextAlign (type)
+		{
+			x=document.querySelector(".box")
+			if (type==0) {
+				console.log(x)
+				x.style['text-align']="left"
+			}else if(type==1) {
+				console.log(x)
+				x.style.textAlign="center"
+			}else {
+				x.style.textAlign="right"
+			}
+		}
+	</script>
+
+	<style type="text/css">
+	* {margin: 0; padding: 0; list-style: none;}
+	.box {text-align: center;}
+	ul {display: flex;}
+	ul li {background: #ff0; margin: 10px; flex: 1; padding: 10px;}
+</style>
+</head>
+<body>
+	<div class="top-box">
+		text-align类型:
+		left 	<input type="radio" name="duiqi" onclick="changeTextAlign(0)" />&nbsp;
+		center <input type="radio" name="duiqi" onclick="changeTextAlign(1)" checked="true" /> &nbsp;&nbsp;
+		right 	<input type="radio" name="duiqi" onclick="changeTextAlign(2)" /> &nbsp;
+	</div>
+	<div class="box">		
+		<ul>
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+			<li>d</li>
+			<li>e</li>
+		</ul>
+	</div>
+</body>
+</html>

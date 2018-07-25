@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function loadXMLDoc() {
+			$.ajax({
+				type : 'GET',
+        		dataType : 'jsonp', // 数据类型配置成jsonp
+        		jsonp : "callback", //配置jsonp随机码标签,在服务器代码部分需要用到他来拼接一个json的js对象
+        		url : 'http://app.benecheck.cn/action/api/mineApi.jsp?action=getMyIndex', //服务路径
+        		async : true,
+        		data: {
+        			"type":'0',
+        		},
+        		success : function (response) {
+        			if(response.code == 200){
+        				alert('返回成功！');
+        			}else{
+        				alert('服务器异常！');
+        			}
+        		},
+        		error : function (){
+        			alert('服务器异常！');
+        		}
+        	});
+		}
+
+		// function loadXMLDoc() 
+		// {
+		// 	var xmlhttp=new XMLHttpRequest();
+		// 	xmlhttp.onreadystatechange=function()
+		// 	{
+		// 		if (xmlhttp.readyState==4&&xmlhttp.status==200) 
+		// 		{
+		// 			//document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		// 		}
+		// 	}
+
+		// 	xmlhttp.open("GET","http://app.benecheck.cn/action/api/mineApi.jsp?action=getMyIndex",true);
+		// 	xmlhttp.setRequestHeader("X-Requested-With","XMLHttpRequest");
+		// 	xmlhttp.setRequestHeader('Access-Control-Allow-Headers', '*');
+		// 	xmlhttp.setRequestHeader('Content-type', 'application/ecmascript');
+		// 	xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+		// 	xmlhttp.send();
+		// }
+	</script>
+</head>
+<body>
+	<div id="myDiv">
+		<h2>使用AJAX修改文本内容</h2>
+	</div>
+	<button type="button" onclick="loadXMLDoc()">修改内容</button>
+</body>
+</html>

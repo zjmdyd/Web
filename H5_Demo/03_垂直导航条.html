@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	* {margin: 0; padding: 0}
+	ul {width: 200px; background: #f1f1f1; border: 1px #000 solid;}
+	li {text-align: center; border-bottom: 1px #000 solid;}
+	li a {display: block; padding: 8px 16px; color: #000; text-decoration: none;}
+	li:last-child {border-bottom: none;}
+	li a.a1 {background: #4CAF50; color: white;}
+	/*排除类为a1的标签*/
+    li a:hover:not(.a1) {background: #666; color: white;}
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#" class="a1">主页</a></li>
+		<li><a href="#">新闻</a></li>
+		<li><a href="#">联系</a></li>
+		<li><a href="#">关于</a></li>
+	</ul>
+</body>
+</html>

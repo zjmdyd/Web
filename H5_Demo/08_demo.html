@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	* {margin: 0; padding: 0; box-sizing: border-box;}
+	ul li {list-style: none; text-align: center;}
+
+	/* 导航栏 */
+	.top-title li {float: left; width: 25%; height: 35px; line-height: 35px; background: #eee; border-right: 1px #999 solid; }
+	.top-title li:last-child {border-right: none;}
+
+	/* 左侧区域 */
+	.left-title {float: left; width: 20%; height: 200px; text-align: center; line-height:25px; border: 1px #eee solid; border-right: none; border-top: none;}
+	.left-title ul {margin-top: 80px;}
+	.left-title ul li {line-height: 20px;}
+
+	/* 右侧区域 */
+	.right-title {float: left; width: 80%;}
+	.right-title ul {float: left; width: 25%; height: 200px;}
+	.right-title ul li {line-height: 49px; border: 1px #eee solid; border-right: none;}
+	.right-title ul li:nth-child(-n+4) {border-top: none;}    /* 匹配前四个子元素 */
+}
+</style>
+</head>
+<body>
+	<div>
+		<ul class="top-title">
+			<li>项目名称</li>
+			<li>检测结果</li>
+			<li>参考范围</li>
+			<li>检测时间</li>
+		</ul>
+	</div>
+	<div class="left-title">
+		<ul>
+			<li>血糖</li>
+			<li>mmol/L</li>
+		</ul>
+	</div>
+	<div class="right-title">
+		<ul>
+			<li>空腹</li>
+			<li>餐前</li>
+			<li>餐后</li>
+			<li>睡前</li>
+		</ul>
+		<ul>
+			<li>6.8</li>
+			<li>4.5</li>
+			<li>3.2</li>
+			<li>2.3</li>
+		</ul>
+		<ul>
+			<li>3.9-5.6</li>
+			<li>3.9-6.1</li>
+			<li>&lt;7.8</li>
+			<li>&lt;5.6</li>
+		</ul>
+		<ul>
+			<li>2018-10-11</li>
+			<li>2018-10-11</li>
+			<li>2018-10-11</li>
+			<li>2018-10-11</li>
+		</ul>
+	</div>
+	
+	<div class="left-title">
+		<ul>
+			<li>血糖</li>
+			<li>mmol/L</li>
+		</ul>
+	</div>
+	<div class="right-title">
+		<ul>
+			<li>空腹</li>
+			<li>餐前</li>
+			<li>餐后</li>
+			<li>睡前</li>
+		</ul>
+		<ul>
+			<li>6.8</li>
+			<li>4.5</li>
+			<li>3.2</li>
+			<li>2.3</li>
+		</ul>
+		<ul>
+			<li>3.9-5.6</li>
+			<li>3.9-6.1</li>
+			<li>&lt;7.8</li>
+			<li>&lt;5.6</li>
+		</ul>
+		<ul>
+			<li>2018-10-11</li>
+			<li>2018-10-11</li>
+			<li>2018-10-11</li>
+			<li>2018-10-11</li>
+		</ul>
+	</div>
+</body>
+</html>

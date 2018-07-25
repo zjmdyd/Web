@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 通过attr()调用当前元素的属性，比如将图片alt提示文字或者链接的href地址显示出来。 -->
+	<style type="text/css">
+		a::before {content:url("https://www.baidu.com/img/baidu_jgylogo3.gif");}
+		a::afetr {content: "("attr(href)")";}
+		a {text-decoration: none;}
+	</style>
+</head>
+<body>
+<a href="http://www.baidu.com">百度一下</a>
+</body>
+</html>
