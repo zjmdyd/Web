@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	/*img {display: block;}*/
+	* {margin: 0; padding: 0}
+		.box {width: 1500px; background: #f00; margin-bottom: 20px;}
+		.box img {display: block;}
+		.box2 {width: 100px; height: 100px; background: #0f0; float: left; margin-left: 100px; _display:inline;}
+		/*_display:inline;针对IE6兼容*/
+		.box3 {width: 800px; height: 5px; background: #ff0; clear: both; overflow: hidden;}
+		/*IE6下不允许出现低于18px的元素存在，解决办法overflow:hidden; 或font-size:0*/
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="images/img_2.png">
+		<!-- img标签是行内元素， 图片和文字要在一行显示，超出3px的部分是为了字母g等准备的
+		解决办法:img 加上display:block
+		-->
+	</div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<input type="text" style="float: left;"><input type="submit" value="提交" style="float: left;">
+	<!-- submit的文字没法统一，解决办法:给它设置value值 -->
+	<!-- IE6下表单高度不统一, 解决办法表单添加float:left-->
+</body>
+</html>

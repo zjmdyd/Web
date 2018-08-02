@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style>
+	* {margin: 0; padding: 0; list-style: none;}
+	.breadcrumb {
+		display: flex;
+		margin: 0 8px;
+		padding: 8px 16px;
+		background-color: #eee;
+	}
+	
+	li+li::before {
+		padding: 8px;
+		color: black;
+		content: "/\00a0";
+	}
+	a {color: green;}
+</style>
+</head>
+<body>
+	<h2 style="margin: 1em;">面包屑导航</h2>
+	<ul class="breadcrumb">
+		<li><a href="#">首页 </a></li>
+		<li><a href="#">前端 </a></li>
+		<li><a href="#">HTML 教程 </a></li>
+		<li>HTML 段落</li>
+	</ul>
+
+</body>
+</html>

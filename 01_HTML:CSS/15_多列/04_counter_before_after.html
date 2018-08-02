@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	body{
+		counter-reset: section;
+	}
+	h1{
+		counter-reset: subsection;
+	}
+	h1:before{
+		counter-increment:section;	
+		content:counter(section) "、";
+	}
+	h2:before{
+		counter-increment:subsection;
+		content: counter(section) "." counter(subsection) "、";
+	}
+</style>
+</head>
+<body>
+	<h1>HTML tutorials</h1>
+	<h2>HTML Tutorial</h2>
+	<h2>XHTML Tutorial</h2>
+	<h2>CSS Tutorial</h2>
+
+	<h1>Scripting tutorials</h1>
+	<h2>JavaScript</h2>
+	<h2>VBScript</h2>
+
+	<h1>XML tutorials</h1>
+	<h2>XML</h2>
+	<h2>XSL</h2>
+</body>
+</html>
+
+<!-- https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Counters
+使用CSS计数器之前，必须重置一个值，默认是0。使用counter()函数来给元素增加计数器。 下面的CSS给每个h3元素的前面增加了 "Section <计算器值>:"。
+body {
+  counter-reset: section;           /* 重置计数器成0 */
+}
+h3:before {
+  counter-increment: section;      /* 增加计数器值 */
+  content: "Section " counter(section) ": "; /* 显示计数器 */
+}
+
+<h3>Introduction</h3>
+<h3>Body</h3>
+<h3>Conclusion</h3>
+
+Section 1:Introduction
+Section 2:Body
+Section 3:Conclusion
+
+********************************************************************************************************
+
+首先， counter-reset 主要功能是用来标识计数器的作用域的。它只能作用于选择器上，它的值包括两部分：第一部分为计数器的名字；第二部分为计数器的起始值（默认为0），counter-reset还可以同时声明多个计数器比如：
+
+counter-reset: count 0  /*标识计数器count从1开始*/ 0可省略
+
+counter-reset: count2 2 /*标识计数器count2 从3开始*/
+ 
+counter-reset: count1 0 count3 0 count4 0 /*声明了三个计数器，count1，count2，count3*/
+
+********************************************************************************************************
+
+counter-increment 表明计数器实际用到的范围 。他的值也包括两部分：第一个为计数器的名字，即counter-reset设置好的名字，第二个值标识递增的值（默认为1），比如：
+
+counter-increment: count 1 /*表明每次递增 1*/	 此时1可省略
+     
+counter-increment：count 2 /*表明每次递增 2*/
+
+ -->

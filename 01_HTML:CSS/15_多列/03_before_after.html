@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	.phoneNumber::before{
+		content:'\260E';
+		font-size: 15px;
+	}
+	p::before{
+		content: "《";
+		color: blue;
+	}
+	p::after{
+		content: "》";
+		color: blue;
+	}
+	a {
+		text-decoration: none;
+	}
+	#a1::after{
+		content: "<"attr(href)">";
+	}
+	#a2:before{
+		content: url("https://www.baidu.com/img/baidu_jgylogo3.gif");
+	}
+	#a2::after{
+		content: "("attr(href)")";
+	}
+</style>
+</head>
+<body>
+	<p class="phoneNumber">12345645654</p>
+	<p>平凡的世界</p>
+	<a href="http://www.cnblogs.com/starof" id="a1">starof</a><br />
+	<a href="http://www.baidu.com" id="a2">百度</a>
+</body>
+</html>

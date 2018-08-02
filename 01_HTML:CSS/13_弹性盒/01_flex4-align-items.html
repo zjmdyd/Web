@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	* {margin: 0; padding: 0;}
+		.box {border: 1px #f00 solid; display: flex; height: 100px; align-items: baseline;}
+		/* align-items默认值: stretch;默认拉伸到父元素的高度*/
+		/* flex-end:侧轴的终点 align-items: baseline:保证文字在一根基线上*/
+		section {width: 50px; border: 1px #000 solid;}
+	</style>
+</head>
+<body>
+<div class="box">
+	<section style="height: 30px;">1</section>
+	<section style="height: 50px;">2</section>
+	<section>3</section>
+	<section style="font-size: 36px;">4</section>
+</div>
+</body>
+</html>
