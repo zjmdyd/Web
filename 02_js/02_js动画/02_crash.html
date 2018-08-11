@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css" media="screen">
+	* {margin: 0; padding: 0}
+	/* body {overflow: hidden;} */
+	div {width: 100px; height: 100px; background: black; position: absolute; left: 0; right: 0}
+</style>
+
+</head>
+<body>
+	<div>
+
+	</div>
+
+	<script type="text/javascript" charset="utf-8" async defer>
+		var speedX = 4;
+		var speedY = 4;
+		var div = document.querySelector("div");
+		function move () {
+			var currentLeft = parseInt(window.getComputedStyle(div).left);
+			var currentTop = parseInt(window.getComputedStyle(div).top);
+
+			check_border_collision(div);
+
+			var left = currentLeft + speedX;
+			var top = currentTop + speedY;
+			div.style.left = left + 'px'
+			div.style.top = top + 'px'
+		}
+
+		function check_border_collision(el) {
+			var style = window.getComputedStyle(el)
+			var left = parseInt(style.left);
+			var top = parseInt(style.top);
+			var width = parseInt(style.width);
+			var height = parseInt(style.height);
+				
+			if (left < 0) {
+				left = 0;
+				speedX *= -1;
+			}
+			if (left > window.innerWidth - width) {
+				left = window.innerWidth - width;
+				speedX *= -1;
+			}
+
+			if (top < 0) {
+				top = 0;
+				speedY *= -1;
+			}
+			if (top > window.innerHeight - height) {
+				top = window.innerHeight - height;
+				speedY *= -1;
+			}
+			el.style.top = top + 'px';
+			el.style.left = left + 'px';
+		}
+		setInterval(function () {
+			move();
+		}, 20);
+	</script>
+</body>
+</html>
