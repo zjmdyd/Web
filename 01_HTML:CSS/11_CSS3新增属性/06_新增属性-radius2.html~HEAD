@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	.box {width: 600px; height: 600px; border-image: url(images/timg.jpeg) 150 150 150 150/50px; border-image-repeat: repeat;}
+	/*
+	border-image-repeat: repeat/round/stretch; //默认为stretch
+	*/
+</style>
+</head>
+<body>
+	<div class="box">
+
+	</div>
+</body>
+</html>

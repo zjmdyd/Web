@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	* {margin: 0px; padding: 0px;}
+		.box {width: 100px; height: 100px; background: #f00; position: relative; left: 50px; top: 50px;}
+		.box2 {background: #0ff}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box2">永和九年，岁在癸丑，暮春之初，会于会稽山阴之兰亭，修禊事也。群贤毕至，少长咸集</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		* {margin: 0; padding: 0}
+		ul li {list-style: none;}
+		.nav {width: 400px; height: 30px; margin: 0 auto;}
+		.nav li {float: left;}
+		/*子元素浮动而父元素没有设置高度则会容易出现高度塌陷*/
+		.nav li a {display: block; width: 100px; height: 30px; color: #333; text-align: center; line-height: 30px; text-decoration: none; background: url(images/base_img.jpg);}
+		#p2 a {background-position: -100px 0;}
+		#p3 a {background-position: -200px 0;}
+		#p4 a {background-position: -300px 0;}
+
+		#p1 a:hover{background-position: 0 -30px;}
+		#p2 a:hover{background-position: -100px -30px;}
+		#p3 a:hover{background-position: -200px -30px;}
+		#p4 a:hover{background-position: -300px -30px;}
+	</style>
+</head>
+<body>
+	<ul class="nav">
+		<li id="p1"><a href="#">首页</a></li>
+		<li id="p2"><a href="#">新闻</a></li>
+		<li id="p3"><a href="#">娱乐</a></li>
+		<li id="p4"><a href="#">体育</a></li>
+	</ul>
+</body>
+</html>
