@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		 // 1 创建Ajax对象 核心对象:XMLHttpRequest
+		 var xhr = new XMLHttpRequest();
+		 // 4 监听请求 必须保证发送请求前就开始监听请求
+		 xhr.onreadystatechange = function () {
+		 	// 当xhr对象的readyState发生改变时这个事件就会触发
+		 	// readyState状态:
+		 	// 0:对象以创建但还没初始化
+		 	// 1:已调用open
+		 	// 2.已经发出了ajax请求
+		 	// 3.已经返回了部分数据
+		 	// 4.数据已经全部返回
+		 	if (xhr.readyState != 4) {
+		 		return;
+		 	}
+		 	if (xhr.status >= 200 && xhr.status <= 300) {
+		 		console.log('请求成功')
+		 		// 数据放在了xhr.responseText中
+		 		document.querySelector("h1").innerText = xhr.responseText
+		 		document.querySelector("h1").innerHTML = xhr.responseText //无换行
+		 	}else {
+		 		console.error("请求失败");
+		 	}
+		 }
+		 // 2 打开这个对象
+		 xhr.open("get", "./01_test.txt", true);
+		 // 3 发送请求
+		 xhr.send();
+	</script>
+</head>
+<body>
+	<h1></h1>
+</body>
+</html>

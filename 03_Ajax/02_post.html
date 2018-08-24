@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// 1.创建对象
+		var xhr = new XMLHttpRequest();
+		// 5.监听数据返回
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState != 4) {
+				return;
+			}
+			if (xhr.status >= 200 && xhr.status <= 300) {
+				// var resp = JSON.parse(xhr.responseText);
+				// if (resp.result) {
+				// 	alert("登录成功");
+				// }else {
+				// 	alert("登录失败");
+				// }
+				console.log('requess success');
+				console.log(xhr.responseText);
+			}else {
+				 console.error("请求失败");
+			}
+		}
+		
+		// 2.配置这个对象
+		xhr.open("post", "./login.php", true);
+		// 3.设置请求头，指明body中的数据是哪种格式
+		// xhr.setRequestHeader("content-Type", "application/x-www-form-urlencoded")；
+		xhr.setRequestHeader("Content-type","application/json; text/json; charset=utf-8");
+		// 4.发送数据
+		xhr.send("user=hehe&password=111111");
+	</script>
+</head>
+<body>
+
+</body>
+</html>

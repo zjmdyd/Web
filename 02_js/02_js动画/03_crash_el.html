@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css" media="screen">
+	* {margin: 0; padding: 0}
+	/* body {overflow: hidden;} */
+	div {width: 100px; height: 100px; background: black; position: absolute; left: 0; right: 0}
+	div:nth-of-type(2) {left: 500px; top: 500px;} 
+</style>
+
+</head>
+<body>
+	<div></div>
+	<div></div>
+
+	<script type="text/javascript" charset="utf-8" async defer>
+		var speedX = 5;
+		var speedY = 4;
+		var div1 = document.querySelector("div");
+		var div2 = document.querySelector("div:nth-of-type(2)");
+		div1.speedX = 5;
+		div1.speedY = 3;
+		div2.speedX = 5;
+		div2.speedY = 3;
+		function move (el) {
+			var currentLeft = parseInt(window.getComputedStyle(el).left);
+			var currentTop = parseInt(window.getComputedStyle(el).top);
+
+			check_border_collision(el);
+			var tmpX, tmpY;
+			if (check_block_collsion(div1, div2)) {
+				tmpX = div1.speedX;
+				tmpY = div1.speedY;
+
+				div1.speedX = div2.speedX;
+				div1.speedY = div2.speedY;
+
+				div2.speedX = tmpX;
+				div2.speedY = tmpY;
+			}
+
+			var left = currentLeft + el.speedX;
+			var top = currentTop + el.speedY;
+			el.style.left = left + 'px'
+			el.style.top = top + 'px'
+		}
+
+		function check_border_collision(el) {
+			var style = window.getComputedStyle(el)
+			var left = parseInt(style.left);
+			var top = parseInt(style.top);
+			var width = parseInt(style.width);
+			var height = parseInt(style.height);
+				
+			if (left < 0) {
+				left = 0;
+				el.speedX *= -1;
+			}
+			if (left > window.innerWidth - width) {
+				left = window.innerWidth - width;
+				el.speedX *= -1;
+			}
+
+			if (top < 0) {
+				top = 0;
+				el.speedY *= -1;
+			}
+			if (top > window.innerHeight - height) {
+				top = window.innerHeight - height;
+				el.speedY *= -1;
+			}
+			el.style.top = top + 'px';
+			el.style.left = left + 'px';
+		}
+		function check_block_collsion(block1, block2) {
+			var left1 = parseInt(window.getComputedStyle(block1).left);
+			var left2 = parseInt(window.getComputedStyle(block2).left);
+
+			var top1 = parseInt(window.getComputedStyle(block1).top);
+			var top2 = parseInt(window.getComputedStyle(block2).top);
+
+			var width1 = parseInt(window.getComputedStyle(block1).width);
+			var width2 = parseInt(window.getComputedStyle(block2).width);
+
+			var height1 = parseInt(window.getComputedStyle(block1).height);
+			var height2 = parseInt(window.getComputedStyle(block2).height);
+
+			var center1 = {
+				x : left1 + width1/2,
+				y : top1 + height1/2
+			}
+			var center2 = {
+				x : left2 + width2/2,
+				y : top2 + height2/2
+			}
+			var disX = Math.abs(center1.x - center2.x);
+			var disY = Math.abs(center1.y - center2.y);
+			if (disX < (width1+width2)/2 && disY < (height1+height2)/2) {
+				return true;
+			}
+			return false;
+		}
+		setInterval(function () {
+			move(div1);
+			move(div2);
+		}, 20);
+	</script>
+</body>
+</html>
