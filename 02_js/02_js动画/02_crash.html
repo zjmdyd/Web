@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>边缘碰撞</title>
 	<style type="text/css" media="screen">
 	* {margin: 0; padding: 0}
-	/* body {overflow: hidden;} */
-	div {width: 100px; height: 100px; background: black; position: absolute; left: 0; right: 0}
+	 body {overflow: hidden;} 	/*解决边缘碰撞出现问题*/
+	div {width: 100px; height: 100px; background: black; position: absolute; left: 0; top: 0}
 </style>
 
 </head>
@@ -26,6 +26,7 @@
 
 			var left = currentLeft + speedX;
 			var top = currentTop + speedY;
+			
 			div.style.left = left + 'px'
 			div.style.top = top + 'px'
 		}
@@ -54,8 +55,8 @@
 				top = window.innerHeight - height;
 				speedY *= -1;
 			}
-			el.style.top = top + 'px';
 			el.style.left = left + 'px';
+			el.style.top = top + 'px';
 		}
 		setInterval(function () {
 			move();

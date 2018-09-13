@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>块间碰撞</title>
 	<style type="text/css" media="screen">
 	* {margin: 0; padding: 0}
-	/* body {overflow: hidden;} */
-	div {width: 100px; height: 100px; background: black; position: absolute; left: 0; right: 0}
+	 body {overflow: hidden;} /*解决边缘碰撞出现问题*/
+	div {width: 100px; height: 100px; background: black; position: absolute; left: 0; top: 0}
 	div:nth-of-type(2) {left: 500px; top: 500px;} 
 </style>
 
@@ -27,9 +27,9 @@
 			var currentLeft = parseInt(window.getComputedStyle(el).left);
 			var currentTop = parseInt(window.getComputedStyle(el).top);
 
-			check_border_collision(el);
+			check_border_collision(el);	
 			var tmpX, tmpY;
-			if (check_block_collsion(div1, div2)) {
+			if (check_block_collsion(div1, div2)) {	// 碰撞之后交换两者速度
 				tmpX = div1.speedX;
 				tmpY = div1.speedY;
 
@@ -42,10 +42,11 @@
 
 			var left = currentLeft + el.speedX;
 			var top = currentTop + el.speedY;
-			el.style.left = left + 'px'
-			el.style.top = top + 'px'
+			el.style.left = left + 'px';
+			el.style.top = top + 'px';
 		}
 
+		// 边缘碰撞
 		function check_border_collision(el) {
 			var style = window.getComputedStyle(el)
 			var left = parseInt(style.left);
@@ -73,6 +74,8 @@
 			el.style.top = top + 'px';
 			el.style.left = left + 'px';
 		}
+
+		// 块间碰撞
 		function check_block_collsion(block1, block2) {
 			var left1 = parseInt(window.getComputedStyle(block1).left);
 			var left2 = parseInt(window.getComputedStyle(block2).left);
