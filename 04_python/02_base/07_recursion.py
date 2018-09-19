@@ -20,8 +20,7 @@ def fact_iter(num, product):
 print(fact_iter(100, 1))
 
 
-Hanoi(3, a, b, c)
-
-Hanoi(2, a, c, b)	Hanoi(1, a, b, c)  Hanoi(a, b) Hanoi(c, a, b)
-Hanoi(a, c)
-Hanoi(2, b, a, c)
+# Hanoi(3, a, b, c)
+# Hanoi(2, a, c, b)	Hanoi(1, a, b, c)  Hanoi(a, b) Hanoi(c, a, b)
+# Hanoi(a, c)
+# Hanoi(2, b, a, c)
