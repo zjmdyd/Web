@@ -66,7 +66,7 @@ def str2Float(s):
 	return v0 + v1/pow(10, len(s1))
 print('num3 = ', str2Float('123.45'))
 
-## 算法2
+## 算法2 待续
   
 def str2float(s):
   return reduce(lambda x,y:x+int2dec(y),map(str2int,s.split('.')))
@@ -78,7 +78,7 @@ def intLen(i):
   return len('%d'%i)
 def int2dec(i):
   return i/(10**intLen(i))
-    
+
 print(str2float('123.456'))
 
 
