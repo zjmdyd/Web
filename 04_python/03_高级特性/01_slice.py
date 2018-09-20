@@ -7,11 +7,12 @@ print('****')
 print('list')
 print('****')
 L = ['Michael', 'Sarah', 'Tracy', 'Bob', 'Jack']
-print(L[0:3])	# 从索引0开始取，直到索引3为止，但不包括索引3
-print(L[1:3])
+print(L[0:3])	# 从索引0开始取，直到索引3为止，但不包括索引3			['Michael', 'Sarah', 'Tracy']
+print(L[1:3])	# ['Sarah', 'Tracy']
 print(L[:3]) 	# 如果第一个索引是0，还可以省略
-print(L[1:])	# 从第一个到最后
-print(L[:-1])	# 从第一个到最后
+print(L[1:])	# 从第一个到最后		['Sarah', 'Tracy', 'Bob', 'Jack']
+print(L[:-1])	# 从第一个到最后		['Michael', 'Sarah', 'Tracy', 'Bob']
+print(L[::-1])	# 从最后一个开始取，每次取一个		['Jack', 'Bob', 'Tracy', 'Sarah', 'Michael']
 
 print(L[-1:])	# 取最后一个元素
 print(L[-2:])
@@ -36,8 +37,9 @@ print('string')
 print('****')
 
 string = 'ABCDEFG'
-print(string[:3])
-print(string[::2])
+print(string[:3])	# ABC
+print(string[::2])	# ACEG
+print(string[::-1])	# GFEDCBA
 
 print('****')
 print('清除空格')
