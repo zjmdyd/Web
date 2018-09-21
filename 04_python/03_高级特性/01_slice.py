@@ -69,7 +69,7 @@ def trim(s):
 
 			break
 
-	changeString = '' if headIndex == 0 else s[headIndex:]
+	changeString = '' if headIndex == 0 else s[headIndex:]	# python之三目运算符变体
 	for i,str in enumerate(s):
 		match = ''
 		for x in range(i+1):
