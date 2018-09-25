@@ -5,10 +5,10 @@
 
 # 函数名其实就是指向一个函数对象的引用，完全可以把函数名赋给一个变量，相当于给这个函数起了一个“别名”：
 a = abs
-print(a(-1))
+print(a(-1))	# 1
 
 n1 = 255
-print(hex(n1))
+print(hex(n1))	# 0xff
 
 def my_abs(x):
 	if not isinstance(x, (int, float)):
@@ -17,14 +17,14 @@ def my_abs(x):
 		return x
 	else:
 		return -x
-print(my_abs(-100))
+print(my_abs(-100))	# 100
 
 def point(x, y):
 	nx = x * 100
 	ny = y * 100
 	return nx, ny
 x, y = point(1, 2)	# 返回值是一个tuple！但是，在语法上，返回一个tuple可以省略括号
-print(x, y)
+print(x, y)	# 100 200
 
 
 ## 空函数:	如果想定义一个什么事也不做的空函数，用pass语句：pass语句什么都不做，那有什么用？实际上pass可以用来作为占位符
@@ -32,20 +32,20 @@ print(x, y)
 def nop():
     pass
 
-## 一个参数
+## 一个参数: 计算x2的函数
 def power(x):
 	return x * x
-print(power(5))	
+print(power(5))	# 25
 
-## 两个参数
+## 两个参数: 用来计算x^n
 def power(x, n):
 	s = 1
 	while n > 0:
 		n -= 1
 		s = s * x
 	return s	
-print(power(2, 4))
-print(power(5, 3))
+print(power(2, 4))	# 16
+print(power(5, 3))	# 125
 
 ## 默认参数
 def power(x, n=2):
@@ -54,8 +54,8 @@ def power(x, n=2):
 		n -= 1 
 		s = s * x;
 	return s	
-print(power(5))
-print(power(5, 4))
+print(power(5))		# 25
+print(power(5, 4))	# 625
 
 def enroll(name, gender):
 	print('name', name)
@@ -77,7 +77,7 @@ def add_end(L=[]):
 	return L
 print(add_end([1, 2, 3]))	# 当你正常调用时，结果似乎不错
 print(add_end())			# 当你使用默认参数调用时，一开始结果也是对的
-print(add_end())			# 但是，再次调用add_end()时，结果就不对了：默认参数是[]，但是函数似乎每次都“记住了”上次添加了'END'后的list
+print(add_end())			# 但是，再次调用add_end()时，结果就不对了：默认参数是[]，但是函数似乎每次都“记住了”上次添加了'END'后的list	# ['END', 'END']
 ##
 # 原因解释如下：
 # Python函数在定义的时候，默认参数L的值就被计算出来了，即[]，因为默认参数L也是一个变量，它指向对象[]，

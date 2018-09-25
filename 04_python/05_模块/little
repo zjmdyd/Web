@@ -1,0 +1,7 @@
+快速查找Python安装路径方法
+
+输入Python
+
+输入 import sys
+
+输入 print(sys.path)
