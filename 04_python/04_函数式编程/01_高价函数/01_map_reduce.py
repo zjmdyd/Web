@@ -29,7 +29,7 @@ from functools import reduce
 def add(x, y):
 	return x + y
 t = reduce(add, [1, 3, 5, 7])
-print(t)
+print(t) # 16
 
 def fn(x, y):
 	return x * 10 + y
