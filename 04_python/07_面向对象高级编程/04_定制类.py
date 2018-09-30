@@ -24,7 +24,9 @@ class Student(object):
         return 'Student object (name=%s)' % self.name
     __repr__ = __str__
 
-## __iter__
+##
+# __iter__
+##
 
 class Fib(object):
 	"""docstring for Fib"""
@@ -45,7 +47,9 @@ for x in Fib():
 
 print('\n')
 
+##
 # __getitem__
+#
 # Fib实例虽然能作用于for循环，看起来和list有点像，但是，把它当成list来使用还是不行，比如，取第n个元素会报错:'Fib' object does not support indexing
 # 要表现得像list那样按照下标取出元素，需要实现__getitem__()方法：
 class Fib(object):
@@ -85,7 +89,9 @@ print(f[0:5])	# [1, 1, 2, 3, 5]
 print(f[0:10])	# [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 print(f[0:10:2])	# [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 
+##
 # __getattr__
+##
 class Student(object):
 	"""docstring for Student"""
 	def __init__(self):
@@ -102,8 +108,9 @@ print(s.age)
 # 注意，只有在没有找到属性的情况下，才调用__getattr__，已有的属性，比如name，不会在__getattr__中查找
 # 注意到任意调用如s.abc都会返回None，这是因为我们定义的__getattr__默认返回就是None。要让class只响应特定的几个属性，我们就要按照约定，抛出AttributeError的错误
 
-
+##
 # __call__
+##
 # 一个对象实例可以有自己的属性和方法，当我们调用实例方法时，我们用instance.method()来调用
 # 任何类，只需要定义一个__call__()方法，就可以直接对实例进行调用
 class Student(object):
