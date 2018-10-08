@@ -9,7 +9,7 @@ pid = os.fork()
 if pid == 0:	# 子进程
 	print('I am a child process (%s) and my parent is %s' % (os.getpid(), os.getppid()))
 else:
-	print('I (%s) just created a child process (%s).' % (os.getpid(), pid))	
+	print('I (%s) just created a child process (%s).' % (os.getpid(), pid))
 
 # 要让Python程序实现多进程（multiprocessing），我们先了解操作系统的相关知识。
 
@@ -54,6 +54,7 @@ import os, time, random
 def long_time_task(name):
 	print('Run task %s (%s)...' % (name, os.getpid()))
 	start = time.time()
+	# time.sleep(t) t-->推迟执行的秒数
 	time.sleep(random.random() * 3)	# random()返回随机生成的一个实数，它在[0,1)范围内
 	end = time.time()
 	print('Task %s runs %.2f second.' % (name, (end - start)))
