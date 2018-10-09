@@ -33,4 +33,63 @@ Cicrcle = namedtuple('Circle', ['x', 'y', 'r'])
 
 # deque是为了高效实现插入和删除操作的双向列表，适合用于队列和栈：
 from collections import deque
+q = deque(['a', 'b', 'c'])
+q.append('x')
+q.appendleft('y')
+print(q)	# deque(['y', 'a', 'b', 'c', 'x'])
 
+# deque除了实现list的append()和pop()外，还支持appendleft()和popleft()，这样就可以非常高效地往头部添加或删除元素
+
+##
+# defaultdict
+##
+# 使用dict时，如果引用的Key不存在，就会抛出KeyError。如果希望key不存在时，返回一个默认值，就可以用defaultdict：
+from collections import defaultdict
+dd = defaultdict(lambda: 'N/A')
+dd['key1'] = 'abc'
+print(dd['key1'])	# key1存在, abc
+print(dd['key2'])	# key2不存在，返回默认值 N/A
+
+# 注意默认值是调用函数返回的，而函数在创建defaultdict对象时传入。
+
+# 除了在Key不存在时返回默认值，defaultdict的其他行为跟dict是完全一样的
+
+##
+# OrderedDict
+##
+# 使用dict时，Key是无序的。在对dict做迭代时，我们无法确定Key的顺序。
+
+# 如果要保持Key的顺序，可以用OrderedDict：
+from collections import OrderedDict
+d = dict([('a', 1), ('b', 2), ('c', 3)])
+print(d)	# dict的Key是无序的
+
+od = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+print(od)	# OrderedDict的Key是有序的
+
+# OrderedDict可以实现一个FIFO（先进先出）的dict，当容量超出限制时，先删除最早添加的Key：
+
+
+##
+# Counter
+##
+# Counter是一个简单的计数器，例如，统计字符出现的个数：
+from collections import Counter
+c = Counter()
+for ch in 'programming':
+	print('ch = %s, count = %d' % (ch, c[ch]))
+	c[ch] = c[ch] + 1
+print(c)
+# ch = p, count = 0
+# ch = r, count = 0
+# ch = o, count = 0
+# ch = g, count = 0
+# ch = r, count = 1
+# ch = a, count = 0
+# ch = m, count = 0
+# ch = m, count = 1
+# ch = i, count = 0
+# ch = n, count = 0
+# ch = g, count = 1
+# Counter({'r': 2, 'g': 2, 'm': 2, 'p': 1, 'o': 1, 'a': 1, 'i': 1, 'n': 1})
+# Counter实际上也是dict的一个子类，上面的结果可以看出，字符'g'、'm'、'r'各出现了两次，其他字符各出现了一次。第一次计数前count=0
