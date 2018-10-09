@@ -17,9 +17,10 @@ from multiprocessing.managers import BaseManager
 # 发送任务的队列
 task_queue = queue.Queue()
 
-# 接受任务的队列
+# 接受结果的队列
 result_queue = queue.Queue()
 
+# 从BaseManager继承的QueueManager:
 class QueueManager(BaseManager):
 	"""docstring for QueueManager"""
 	# def __init__(self):
@@ -31,24 +32,31 @@ QueueManager.register('get_task_queue', callable=lambda: task_queue)
 QueueManager.register('get_result_queue', callable=lambda: result_queue)
 
 # 绑定端口5000, 设置验证码'abc':
-manager = QueueManager(address=('', 5000), authkey=b'abc')
+manager = QueueManager(address=('localhost', 5000), authkey=b'abc')
+
 # 启动Queue:
+print("启动服务...")
 manager.start()
-# 获得通过网络访问的Queue对象
+
+# 获得通过网络访问的Queue对象，
+# 必须通过manager获得的Queue接口添加
 task = manager.get_task_queue()
 result = manager.get_result_queue()
 
+# 请注意，当我们在一台机器上写多进程程序时，创建的Queue可以直接拿来用，但是，在分布式多进程环境下，
+# 添加任务到Queue不可以直接对原始的task_queue进行操作，那样就绕过了QueueManager的封装，必须通过manager.get_task_queue()获得的Queue接口添加
+
 # 放几个任务进去:
+print("放入队列")
 for i in range(10):
-	n = random.randint(0, 10000)
-	print('Put task %d...' % n)
-	task.put(n)
+	# n = random.randint(0, 10000)
+	print('Put task %d...' % i)
+	task.put(i)
 
 # 从result队列读取结果:
-print('Try get results...')
+print("取出结果")
 for i in range(10):
 	r = result.get(timeout=10)
 	print('Result: %s' % r)
 # 关闭:
 manager.shutdown()
-print
