@@ -18,7 +18,7 @@ cursor = conn.cursor()
 cursor.execute('create table user (id varchar(20) primary key, name varchar(20))')
 
 # 继续执行一条SQL语句，插入一条记录:
-cursor.execute('insert into user (id, name) values (\'1\', \'Michael\')')
+cursor.execute("insert into user (id, name) values ('1', 'Michael')")
 
 # 通过rowcount获得插入的行数:
 print(cursor.rowcount)

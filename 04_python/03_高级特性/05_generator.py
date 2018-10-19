@@ -77,6 +77,61 @@ for x in o:
 	print(x)
 
 
+# 生成器对象是一个迭代器。但是它比迭代器对象多了一些方法，它们包括send方法，throw方法和close方法。这些方法，主要是用于外部与生成器对象的交互。
+# send方法有一个参数，该参数指定的是上一次被挂起的yield语句的返回值
 
+def MyGenerator():
+	value = (yield 1)
+	value = (yield value)
+
+gen = MyGenerator()
+print(next(gen))	# python3之前用gen.next()
+print(gen.send(2))
+# print(gen.send(3))
+
+# 上面代码的运行过程如下。
+# 当调用gen.next()方法时，python首先会执行MyGenerator方法的yield 1语句。由于是一个yield语句，因此方法的执行过程被挂起，而next方法返回值为yield关键字后面表达式的值，即为1。
+
+# 当调用gen.send(2)方法时，python首先恢复MyGenerator方法的运行环境。同时，将表达式(yield 1)的返回值定义为send方法参数的值，即为2。这样，接下来value=（yield 1）这一赋值语句会将value的值置为2。继续运行会遇到yield value语句。因此，MyGenerator方法再次被挂起。同时，send方法的返回值为yield关键字后面表达式的值，也即value的值，为2。
+
+# 当调用send(3)方法时MyGenerator方法的运行环境。同时，将表达式(yield value)的返回值定义为send方法参数的值，即为3。这样，接下来value=（yield value）这一赋值语句会将value的值置为3。继续运行，MyGenerator方法执行完毕，故而抛出StopIteration异常。
+# 总的来说，send方法和next方法唯一的区别是在执行send方法会首先把上一次挂起的yield语句的返回值通过参数设定，从而实现与生成器方法的交互。但是需要注意，在一个生成器对象没有执行next方法之前，由于没有yield语句被挂起，所以执行send方法会报错
+# gen.send(None)  但是这个方法是可以执行的
+# 因为当send方法的参数为None时，它与next方法完全等价。但是注意，虽然上面的代码可以接受，但是不规范。所以，在调用send方法之前，还是先调用一次next方法为好。
+
+def myGenerator():  
+	try:
+		yield 1
+		print('Statement after yield')
+	except GeneratorExit as e:
+		print("Generator error caught")
+print ("End of myGenerator")
+
+gen = myGenerator()
+print(next(gen))
+gen.close()
+print("End of main caller")
+
+# 需要注意的是，GeneratorExit异常的产生意味着生成器对象的生命周期已经结束。因此，一旦产生了GeneratorExit异常，生成器方法后续执行的语句中，不能再有yield语句，否则会产生RuntimeError
+
+
+# def myGenerator():  
+#     value = 1  
+#     while True:  
+#         try:  
+#             yield value  
+#             value += 1  
+#         except Exception:  
+#             value = 1  
+  
+  
+# gen = myGenerator()  
+# print gen.next()  
+# print gen.next()  
+# print gen.throw(Exception, "Method throw called!") 
+# 代码第7行的except语句声明只捕获Exception异常对象。这样，当系统产生GeneratorExit异常后，不再被except语句捕获，继续向外抛出，从而跳出了生成器对象方法的while语句。
+
+
+# 这里再简单说一句，GeneratorExit异常继承自BaseException类。BaseException类与Exception类不同。一般情况下，BaseException类是所有内建异常类的基类，而Exception类是所有用户定义的异常类的基类。
 
 
