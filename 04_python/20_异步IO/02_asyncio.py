@@ -5,6 +5,8 @@
 
 import asyncio
 
+# asyncio是Python 3.4版本引入的标准库，直接内置了对异步IO的支持。
+
 @asyncio.coroutine
 def hello():
 	print('Hello world!')

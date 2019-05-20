@@ -8,7 +8,7 @@ import asyncio
 def wget(host):
 	print('wget %s... ' % host, 80)
 	connect = asyncio.open_connection(host, 80)
-	reader, write = yield from connect 
+	reader, write = yield from connect
 	header = 'GET / HTTP/1.0\r\nHost: %s\r\n\r\n' % host
     writer.write(header.encode('utf-8'))
     yield from writer.drain()
