@@ -1,0 +1,8 @@
+// 在 JavaScript 中，null 的数据类型是对象。
+var person = null;           // 值是 null，但是类型仍然是对象
+console.log(typeof(person));
+
+// Undefined 与 null 的值相等，但类型不相等：
+var son = undefined
+console.log(person == son)
+console.log(person === son)

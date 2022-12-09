@@ -1,0 +1,19 @@
+<html>
+<body>
+
+<h2>JavaScript 函数</h2>
+
+<p>不使用 () 访问函数将返回函数声明而不是函数结果：</p>
+
+<p id="demo"></p>
+
+<script>
+function toCelsius(f) {
+    return (5/9) * (f-32);
+}
+// 访问没有 () 的函数将返回函数定义：
+document.getElementById("demo").innerHTML = toCelsius;
+</script>
+
+</body>
+</html>
