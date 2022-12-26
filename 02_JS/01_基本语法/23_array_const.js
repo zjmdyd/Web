@@ -32,9 +32,45 @@ cars = ["Saab", "Volvo", "BMW"];
 */
 
 /*
+用 var 声明的数组可以随时初始化。
+您甚至可以在声明之前使用该数组：
+*/
+nums = [1, 2, 3];
+var nums;
+console.log("nums = " + nums);
+
+/*
 const 块作用域
 用 const 声明的数组具有块作用域。
-
 在块中声明的数组与在块外声明的数组不同：
 */
+const names = ["Saab", "Volvo", "BMW"];
+// 此处 names[0] 为 "Saab"
+// names = Saab,Volvo,BMW
+console.log("names = " + names);
+{
+  const names = ["Toyota", "Volvo", "BMW"];
+  // 此处 names[0] 为 "Toyota"
+//   cars1 = Toyota,Volvo,BMW,Audi
+  console.log("names = " + names);
+}
+// names = Saab,Volvo,BMW
+console.log("names = " + names);
+
+/*
+用 var 声明的数组没有块作用域,
+*/
+var cars2 = ["Saab", "Volvo", "BMW"];
+// 此处 cars[0] 为 "Saab"
+// cars2 = Saab,Volvo,BMW
+console.log("cars2 = " + cars2);
+{
+  var cars2 = ["Toyota", "Volvo", "BMW"];
+  // 此处 cars[0] 为 "Toyota"
+//   cars2 = Toyota,Volvo,BMW
+  console.log("cars2 = " + cars2);
+}
+// 此处 cars[0] 为 "Toyota"
+// cars2 = Toyota,Volvo,BMW
+console.log("cars2 = " + cars2);
 
