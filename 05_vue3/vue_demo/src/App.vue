@@ -6,7 +6,7 @@
     <!-- <button @click="btnEvent">点击传值给子组件</button> -->
   <!-- </div> -->
 
-  <!-- 声明中欧琪函数demo:vue3-012有用到 -->
+  <!-- 生命周期函数demo:vue3-012有用到 -->
   <!-- <h2 @click="v1 = !v1">点击显示隐藏子组件</h2> -->
   <!-- <HelloWorld v-if="v1"/> -->
 
@@ -16,13 +16,15 @@
     <h2>年龄:{{res_a.age}}</h2>
     <h2>公司:{{res_a.company}}</h2>
   </div>
+  <!-- 组组件传值vue3-010.vue会用到 -->
+  <!-- <HelloWorld ref=""/> --> 
   <HelloWorld />
 </template>
 
 <script>
 // import HelloWorld from './components/vue3-001.vue'
 // import HelloWorld from './components/vue3-002.vue'
-// import HelloWorld from './components/vue3-003.vue'
+import HelloWorld from './components/vue3-003.vue'
 // import HelloWorld from './components/vue3-004.vue'
 // import HelloWorld from './components/vue3-005.vue'
 // import HelloWorld from './components/vue3-006.vue'
@@ -32,7 +34,7 @@
 // import HelloWorld from './components/vue3-010.vue'
 // import HelloWorld from './components/vue3-011.vue'
 // import HelloWorld from './components/vue3-012.vue'
-import HelloWorld from './components/vue3-013.vue'
+// import HelloWorld from './components/vue3-013.vue'
 
 import { computed, ref, onErrorCaptured} from 'vue'
 import { useStore } from 'vuex'

@@ -14,6 +14,7 @@
 import {} from 'vue'
 import plbLic from '../config/public'
 
+// 抽离封装
 export default({
     setup(){
         // const res_a = reactive({

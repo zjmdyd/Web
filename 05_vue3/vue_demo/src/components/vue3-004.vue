@@ -12,7 +12,7 @@ import {ref, toRef} from 'vue';
 export default ({
     setup() {
         const obj = {name: '马云', age: 50};    // 源数据
-        const res = toRef(obj, 'name');
+        const res = toRef(obj, 'name'); // toRef需传两个参数，第一个操作对象，第二个对象的某个属性
 
         const num = 0;              // 源数据
         const ref_in = ref(num);    // 实质是复制操作

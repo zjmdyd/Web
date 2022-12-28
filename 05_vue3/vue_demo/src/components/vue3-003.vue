@@ -5,11 +5,20 @@
     <h1>产品: {{obj.taobao}}</h1>
     <hr>
     <button @click="btnEvent">点击更新视图层某一个数据</button>
+    <p>{{ arr }}</p>
+
+    <div>Checked names: {{ checkedNames }}</div>
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames" />
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames" />
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames" />
+        <label for="mike">Mike</label>
 </template>
 
 <script>
 // reactive不能用基本数据类型，ref可以
-import { reactive } from 'vue';
+import { reactive, ref} from 'vue';
 export default ({
     setup() {
         const name = '马云';
@@ -24,13 +33,19 @@ export default ({
                 }
             }
         });
+
+        const arr = reactive(['a', 'b', 'c'])
+
+        const checkedNames = ref([])    // 此处不能用reactive,?
         function btnEvent() {
             obj.name = '马化腾';
             obj.pro.a.b[0] = '深层次数据已经被改了';
+            arr.push('d')
             console.log(obj)
+            console.log(checkedNames)
         }
-
-        return {btnEvent, obj}
+        
+        return {btnEvent, obj, arr, checkedNames}
     },
 })
 

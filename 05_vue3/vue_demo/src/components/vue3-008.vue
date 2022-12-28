@@ -26,7 +26,7 @@ export default({
             }
         })
        
-        // 键入页面就会自动监听
+        // 进入页面就会自动监听
         const res = watchEffect(()=>{
             console.log('watchEffect')
             // const a = p1.value

@@ -18,9 +18,8 @@ export default({
             console.log('onMounted, 在挂载时被调用')
         })
 
-
         onBeforeUpdate(()=>{
-            console.log('onBeforeUpdate, 数据更新时调用')
+            console.log('onBeforeUpdate, 数据更新之前被调用')
         })
         onUpdated(()=>{
             console.log('onUpdated, 数据更改导致的虚拟DOM重新渲染，在这之后会调用该钩子')
