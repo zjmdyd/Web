@@ -1,9 +1,4 @@
 const routes = [
-    // {
-    //     name: 'mainPage',
-    //     path: '/',
-    //     component: ()=>import('@/views/mainPage')
-    // },
     {
         name: 'a',
         path: '/a',

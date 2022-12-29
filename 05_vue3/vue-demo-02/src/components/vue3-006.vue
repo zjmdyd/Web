@@ -53,7 +53,6 @@ function warn(message, event) {
 在监听键盘事件时，我们经常需要检查特定的按键。
 Vue 允许在 v-on 或 @ 监听按键事件时添加按键修饰符。
 
-template
 <!-- 仅在 `key` 为 `Enter` 时调用 `submit` -->
 <input @keyup.enter="submit" />
 你可以直接使用 KeyboardEvent.key 暴露的按键名称作为修饰符，但需要转为 kebab-case 形式。
