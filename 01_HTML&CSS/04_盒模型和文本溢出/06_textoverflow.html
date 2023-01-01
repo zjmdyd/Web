@@ -3,9 +3,18 @@
 <head>
 	<title></title>
 	<style type="text/css">
-	.box {width: 600px; border: 1px #000 solid; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-	.uu li {width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; background: url(images/zuo.png) no-repeat left 50%; padding-left: 50px; font-size: 48px;}
-	/*当设置overflow: hidden;时，列表前面的点会消失，因为点默认是在标签的外边的，解决方法是设置list-style-position: inside;但是可能不会在所有浏览器兼容，最好的办法是设置背景图片*/
+	.box {
+		width: 600px; border: 1px #000 solid; white-space: nowrap; 
+		overflow: hidden; text-overflow: ellipsis;
+		}
+	.uu li {
+		width: 300px; white-space: nowrap; overflow: hidden; 
+		text-overflow: ellipsis; background: #f00 url(images/zuo.png) no-repeat left 50%; 
+		background-size: 30px 30px;
+		padding-left: 30px; font-size: 48px;
+		}
+	/*当设置overflow: hidden;时，列表前面的点会消失，因为点默认是在标签的外边的，
+	解决方法是设置list-style-position: inside;但是可能不会在所有浏览器兼容，最好的办法是设置背景图片*/
 </style>
 </head>
 <body>

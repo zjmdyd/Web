@@ -7,20 +7,29 @@
 		img {display: block; width: 500px; height: auto;}
 		.box {width: 500px; height: 500px; border: 1px #000 solid; margin: 0 auto; position: relative;}
 		.btn {position: absolute; right: 5px; bottom: 10px}
-		.btn a {width: 35px; height: 35px; background: rgba(0,0,0,.5); float: left; text-align: center; line-height: 35px; color: #fff; text-decoration: none; margin-right: 5px;}
+		.btn a {
+			width: 35px; height: 35px; background: rgba(0,0,0,.5); 
+			float: left; text-align: center; line-height: 35px; color: #fff; 
+			text-decoration: none; margin-right: 5px;
+			}
 		.btn a:hover {background: rgba(0,0,0,1);}
 		/*内联元素宽高对它是没有用的，想改变的话需要设置diaplay或者设置float，设置float更好*/
 		.list {width: 500px; height: 500px; overflow: hidden;}
 		/*overflow:hidden隐藏其他超出的3张图片*/
 	</style>
+	<script>
+		function changeImg(x) {
+			console.log(x)
+		}
+	</script>
 </head>
 <body>
 <div class="box">
 	<div class="btn">
-		<a href="#img1">1</a>
-		<a href="#img2">2</a>
-		<a href="#img3">3</a>
-		<a href="#img4">4</a>
+		<a href="#img1" onmousemove="changeImg(this)">1</a>
+		<a href="#img2" onmousemove="changeImg(this)">2</a>
+		<a href="#img3" onmousemove="changeImg(this)">3</a>
+		<a href="#img4" onmousemove="changeImg(this)">4</a>
 	</div>
 	<div class="list">
 		<img src="images/img_1.png" id="img1">
