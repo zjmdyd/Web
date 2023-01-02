@@ -19,7 +19,7 @@ let parentMsg = toRef(props, 'msg')
 import { toRef } from 'vue';
 
 export default({
-    props: ["msg"],// 如果这行不写，下面就接收不到,父组件绑定的自段值'msg’
+    props: ["msg"],// 如果这行不写，下面就接收不到,父组件绑定的字段值'msg’
     setup(props){
         console.log(props)
         const parentMsg = toRef(props, 'msg')
