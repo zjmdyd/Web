@@ -1,7 +1,9 @@
 <template>
     <div>
         <h1>{{ title }}</h1>
-        <button @click="$emit('enlarge-text')">Enlarge text</button>
+        <!-- <button @click="$emit('enlarge-text')">Enlarge text</button> -->
+        <!-- 带参数的 -->
+        <button @click="$emit('enlarge-text', 2)">Enlarge text</button>
     </div>
 
 </template>

@@ -27,6 +27,7 @@
 <script>
 
 export default({
+    // 事件声明是可选的
     emits: ['sendMsg'],
     setup(props, ctx) {
         const items = [{ message: 'Foo' }, { message: 'Bar' }]
