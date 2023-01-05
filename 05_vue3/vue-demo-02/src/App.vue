@@ -27,7 +27,10 @@
 // import HelloWorld from './components/vue3-014.vue' 
 // import HelloWorld from './components/vue3-015.vue' // CapitalizeInputComponent
 // import HelloWorld from './components/vue3-016.vue'    // 具名插槽
-import HelloWorld from './components/vue3-017.vue'      // 插槽传值
+// import HelloWorld from './components/vue3-017.vue'   // 插槽传值
+// import HelloWorld from './components/vue3-018.vue'      // 插槽传值2
+// import HelloWorld from './components/vue3-019.vue'      // provide/inject和计算属性
+import HelloWorld from './components/vue3-020.vue'      // 组合式函数-鼠标监听
 // import HelloWorld from './components/vue3-Child.vue'
 
 import { ref } from 'vue';
