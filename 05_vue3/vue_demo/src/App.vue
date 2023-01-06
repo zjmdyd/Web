@@ -10,12 +10,12 @@
   <!-- <h2 @click="v1 = !v1">点击显示隐藏子组件</h2> -->
   <!-- <HelloWorld v-if="v1"/> -->
 
-  <div class="back">
+  <!-- <div class="back">
     我是父组件:
     <h2>姓名:{{res_a.name}}</h2>
     <h2>年龄:{{res_a.age}}</h2>
     <h2>公司:{{res_a.company}}</h2>
-  </div>
+  </div> -->
   <!-- 组组件传值vue3-010.vue会用到 -->
   <!-- <HelloWorld ref=""/> --> 
   <HelloWorld />
@@ -24,12 +24,12 @@
 <script>
 // import HelloWorld from './components/vue3-001.vue'
 // import HelloWorld from './components/vue3-002.vue'
-import HelloWorld from './components/vue3-003.vue'
+// import HelloWorld from './components/vue3-003.vue'
 // import HelloWorld from './components/vue3-004.vue'
 // import HelloWorld from './components/vue3-005.vue'
 // import HelloWorld from './components/vue3-006.vue'
 // import HelloWorld from './components/vue3-007.vue'
-// import HelloWorld from './components/vue3-008.vue'
+import HelloWorld from './components/vue3-008.vue'
 // import HelloWorld from './components/vue3-009.vue'
 // import HelloWorld from './components/vue3-010.vue'
 // import HelloWorld from './components/vue3-011.vue'

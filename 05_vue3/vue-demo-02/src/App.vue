@@ -30,7 +30,10 @@
 // import HelloWorld from './components/vue3-017.vue'   // 插槽传值
 // import HelloWorld from './components/vue3-018.vue'      // 插槽传值2
 // import HelloWorld from './components/vue3-019.vue'      // provide/inject和计算属性
-import HelloWorld from './components/vue3-020.vue'      // 组合式函数-鼠标监听
+// import HelloWorld from './components/vue3-020.vue'      // 组合式函数-鼠标监听
+// import HelloWorld from './components/vue3-021.vue'      // 异步状态示例
+// import HelloWorld from './components/vue3-022.vue'      // Transition
+import HelloWorld from './components/vue3-023.vue'      // Transition2
 // import HelloWorld from './components/vue3-Child.vue'
 
 import { ref } from 'vue';

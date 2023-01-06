@@ -29,13 +29,13 @@ export default({
         // 进入页面就会自动监听
         const res = watchEffect(()=>{
             console.log('watchEffect')
-            // const a = p1.value
-            // console.log(a)
+            const a = p1.value
+            console.log('p1.value = ' + a)
 
-            const b = p3.age.num
-            console.log(b)
+            // const b = p3.age.num
+            // console.log(b)
         })
-        res()   // 停止监听:进入页面还是会调用
+        // res()   // 停止监听:进入页面还是会调用一次
 
         return {p1, p2, p3, res}
     },
