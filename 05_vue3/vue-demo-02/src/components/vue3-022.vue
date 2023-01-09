@@ -10,6 +10,16 @@
         <Transition name="transByName">
             <p v-if="testTransByName">test transByName</p>
         </Transition>
+
+        <!-- 指定自定义的过度class -->
+        <button @click="showByClass = !showByClass">show by class</button>
+        <Transition 
+        name="custom-classes"
+        enter-active-class="animate__animated animate__tada"
+        leave-active-class="animate__animated animate__bounceOutRight"
+        >
+        <p v-if="showByClass">hello</p>
+        </Transition>
     </div>
 
 </template>
@@ -19,6 +29,7 @@ import { ref } from 'vue';
 
 const show = ref(true)
 const testTransByName = ref(true)
+const showByClass = ref(true)
 </script>
 
 <style>
@@ -68,5 +79,7 @@ v-leave-active：离开动画的生效状态。应用于整个离开动画阶段
 .transByName-leave-to {
   opacity: 0;
 }
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
 
 </style>

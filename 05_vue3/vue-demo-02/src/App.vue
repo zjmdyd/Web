@@ -33,7 +33,12 @@
 // import HelloWorld from './components/vue3-020.vue'      // 组合式函数-鼠标监听
 // import HelloWorld from './components/vue3-021.vue'      // 异步状态示例
 // import HelloWorld from './components/vue3-022.vue'      // Transition
-import HelloWorld from './components/vue3-023.vue'      // Transition2
+// import HelloWorld from './components/vue3-023.vue'      // Transition2
+// import HelloWorld from './components/vue3-024.vue'      // Transition3
+// import HelloWorld from './components/vue3-024.vue'      // Transition4 深层级过渡
+// import HelloWorld from './components/vue3-025.vue'       // Transition5 JavaScript钩子
+// import HelloWorld from './components/vue3-026.vue'       // Transition5 JavaScript钩子 
+import HelloWorld from './components/vue3-027.vue'       // Transition5 组件间过渡
 // import HelloWorld from './components/vue3-Child.vue'
 
 import { ref } from 'vue';
