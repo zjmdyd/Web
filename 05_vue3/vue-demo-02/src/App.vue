@@ -38,7 +38,10 @@
 // import HelloWorld from './components/vue3-024.vue'      // Transition4 深层级过渡
 // import HelloWorld from './components/vue3-025.vue'       // Transition5 JavaScript钩子
 // import HelloWorld from './components/vue3-026.vue'       // Transition5 JavaScript钩子 
-import HelloWorld from './components/vue3-027.vue'       // Transition5 组件间过渡
+// import HelloWorld from './components/vue3-027.vue'       // Transition5 组件间过渡
+// import HelloWorld from './components/vue3-028.vue'       // TransitionGroup
+// import HelloWorld from './components/vue3-029.vue'       // TransitionGroup 渐进延迟列表动画
+import HelloWorld from './components/vue3-030.vue'       // KeepAlive内置组件
 // import HelloWorld from './components/vue3-Child.vue'
 
 import { ref } from 'vue';

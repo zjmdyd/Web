@@ -33,9 +33,10 @@ export default ({
                 }
             }
         });
-
-        const arr = reactive(['a', 'b', 'c'])
-
+        console.log('obj = ')
+        console.log(obj)
+        const arr = reactive(['a', 'b', 'c'])    // 此处可以用ref或reactive
+        
         const checkedNames = ref([])    // 此处不能用reactive,?
         function btnEvent() {
             obj.name = '马化腾';

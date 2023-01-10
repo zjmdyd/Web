@@ -23,6 +23,7 @@ export default({
         const res = reactive({mayun, huateng, mayun_a, huateng_a})
         // 计算年龄
         const sum = computed(()=> {
+            console.log('computed方法执行了')
             return res.mayun + res.huateng
         })
         // 文本拼接
