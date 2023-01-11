@@ -23,7 +23,7 @@
 // import HelloWorld from './components/vue3-010.vue'
 // import HelloWorld from './components/vue3-011.vue' // AlertBox
 // import HelloWorld from './components/vue3-012.vue'
-// import HelloWorld from './components/vue3-013.vue'
+// import HelloWorld from './components/vue3-013.vue'    // CustomInput
 // import HelloWorld from './components/vue3-014.vue' 
 // import HelloWorld from './components/vue3-015.vue' // CapitalizeInputComponent
 // import HelloWorld from './components/vue3-016.vue'    // 具名插槽
@@ -41,7 +41,8 @@
 // import HelloWorld from './components/vue3-027.vue'       // Transition5 组件间过渡
 // import HelloWorld from './components/vue3-028.vue'       // TransitionGroup
 // import HelloWorld from './components/vue3-029.vue'       // TransitionGroup 渐进延迟列表动画
-import HelloWorld from './components/vue3-030.vue'       // KeepAlive内置组件
+// import HelloWorld from './components/vue3-030.vue'       // KeepAlive内置组件
+import HelloWorld from './components/vue3-031.vue'        // Teleport
 // import HelloWorld from './components/vue3-Child.vue'
 
 import { ref } from 'vue';
