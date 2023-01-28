@@ -11,8 +11,8 @@
 
 <!-- 使用setup语法糖，这时候的is如果使用字符串会加载不出来，得使用组件实例 -->
 <script setup>
-import HomePage from './HomePage.vue'
-import PostsPage from './PostsPage.vue'
+import HomePage from '../views/HomePage.vue'
+import PostsPage from '../views/PostsPage.vue'
 import ArchivePage from './ArchivePage.vue'
 import { ref, shallowRef } from 'vue'
 

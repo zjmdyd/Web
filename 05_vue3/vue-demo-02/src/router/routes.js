@@ -8,6 +8,21 @@ const routes = [
         name: 'b',
         path: '/b',
         component: ()=>import('@/views/vue-view-B')
+    },
+    {
+        name: 'Home',
+        path: '/home',
+        component: ()=>import('@/views/HomeComp')
+    },
+    {
+        name: 'About',
+        path: '/about',
+        component: ()=>import('@/views/AboutComp')
+    },
+    {
+        name: 'NotFound',
+        path: '/notFound',
+        component: ()=>import('@/views/NotFound')
     }
 ]
 

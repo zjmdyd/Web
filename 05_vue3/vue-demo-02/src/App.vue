@@ -42,7 +42,8 @@
 // import HelloWorld from './components/vue3-028.vue'       // TransitionGroup
 // import HelloWorld from './components/vue3-029.vue'       // TransitionGroup 渐进延迟列表动画
 // import HelloWorld from './components/vue3-030.vue'       // KeepAlive内置组件
-import HelloWorld from './components/vue3-031.vue'        // Teleport
+// import HelloWorld from './components/vue3-031.vue'        // Teleport
+import HelloWorld from './components/vue3-032.vue'        // routes
 // import HelloWorld from './components/vue3-Child.vue'
 
 import { ref } from 'vue';
