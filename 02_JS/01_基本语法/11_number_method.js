@@ -21,8 +21,8 @@ toExponential() 返回字符串值，它包含已被四舍五入并使用指数�
 
 var x = 9.656;
 var y = x.toExponential(2); // 返回 9.66e+0
-console.log(y);     // 9.66e+0
-console.log(typeof(y));
+console.log(y);             // 9.66e+0
+console.log(typeof(y));     // string
 var z = x.toExponential(4); // 返回 9.6560e+0
 console.log(z)      // 9.6560e+0
 var m = x.toExponential();

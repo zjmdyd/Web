@@ -27,7 +27,8 @@ arr.forEach(function (item) {
     console.log(item);
 });
 
-console.log('**********')
+// some() 方法检查某些数组值是否通过了测试。
+console.log('*****some*****')
 var val = arr.some(function(item) {
     if(item === 2) {
         return;

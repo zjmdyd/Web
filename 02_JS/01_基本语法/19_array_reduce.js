@@ -15,7 +15,7 @@ var sum = numbers1.reduce(myFunction);
 上例并未使用 index 和 array 参数。可以省略。
 */
 function myFunction(total, value, index, array) {
-    console.log("total = " + total + ", value = " + value);
+  console.log("total = " + total + ", value = " + value);
   return total - value;
 }
 /*
@@ -44,10 +44,18 @@ console.log("sum = " + sum);
 /*
 reduce() 方法能够接受一个初始值：
 */
-var sum = numbers1.reduce(myFunction, 100);
+var sum = numbers1.reduce(myFunction3, 100);
 
-function myFunction(total, value) {
+function myFunction3(total, value) {
+  console.log("total = " + total + ", value = " + value);
   return total + value;
 }
+/*
+total = 100, value = 45
+total = 145, value = 4
+total = 149, value = 9
+total = 158, value = 16
+total = 174, value = 25
+*/
 // sum = 199
 console.log("sum = " + sum);
