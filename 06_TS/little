@@ -1,0 +1,4 @@
+tsc --init生成tsconfig.json
+
+ts-node运行.ts文件
+ts-node index.ts

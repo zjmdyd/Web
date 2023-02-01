@@ -1,15 +1,18 @@
 // indexOf() 方法返回字符串中指定文本首次出现的索引（位置）：
+// lastIndexOf() 方法返回指定文本在字符串中最后一次出现的索引
+// 两种方法都接受作为检索起始位置的第二个参数
 var str = "The full name of China is the People's Republic of China.";
 var pos = str.indexOf("China");
 var lastPos = str.lastIndexOf("China");
-console.log(pos);
+console.log('pos = ' + pos); 
 console.log("lastPos = " + lastPos);
+var pos = str.indexOf("China", 18); // 指定搜索起始位置
+console.log('pos = ' + pos);
 
 /*
 两种方法，indexOf() 与 search()，是相等的。
 
 这两种方法是不相等的。区别在于：
-
 search() 方法无法设置第二个开始位置参数。
 indexOf() 方法无法设置更强大的搜索值（正则表达式）。
 */

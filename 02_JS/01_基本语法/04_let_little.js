@@ -11,3 +11,4 @@ for (let i = 0; i < 10; i++) {
 }
 console.log('循环后的i = ' + i);
 var test = 1;
+
