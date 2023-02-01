@@ -41,9 +41,10 @@ console.log("n3 = " + n);    // 2
 var n = str.lastIndexOf("rb", 1);
 console.log("n3 = " + n);    // -1
 
+console.log('********slice************')
 // slice() 提取字符串的某个部分并在新字符串中返回被提取的部分。
 var str = "Apple, Banana, Mango";
-var res = str.slice(1, 3);
+var res = str.slice(1, 3);  // pp
 console.log(res)
 
 // 如果省略第二个参数，则该方法将裁剪字符串的剩余部分：
