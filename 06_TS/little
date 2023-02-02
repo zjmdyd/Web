@@ -2,3 +2,6 @@ tsc --init生成tsconfig.json
 
 ts-node运行.ts文件
 ts-node index.ts
+
+BOM（浏览器对象模型)
+DOM 文档对象模型（Document Object Model)

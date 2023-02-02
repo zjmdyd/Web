@@ -6,7 +6,6 @@ function sum(x: number, y: number): number {
 
 console.log(sum(1 , 2))
 
-
 // 命名函数
 function say1(name: string): void {
     console.log(name)

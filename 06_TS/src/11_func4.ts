@@ -13,4 +13,13 @@ function reverse(x: number | string): number | string | void {
 console.log(reverse(123))   // 321
 console.log(reverse('abc')) // cba
 
+// 用type声明函数
+// 先声明一个函数
+type AddFun = (a: number, b: number) => number;
+// 再根据声明去实现这个函数
+let add: AddFun = function(x, y) {
+    return x + y
+}
+let res = add(10, 20)
+console.log(res)
 
