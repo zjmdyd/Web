@@ -1,6 +1,6 @@
 <template>
     <div>
-        {{parentMsg }}
+        {{ parentMsg }}
     </div>
 </template>
 

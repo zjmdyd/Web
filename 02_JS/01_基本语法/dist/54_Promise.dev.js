@@ -5,7 +5,7 @@ function myDisplayer(some) {
 }
 
 var myPromise = new Promise(function (myResolve, myReject) {
-  var x = 0; // 一些代码（请尝试将 x 改为 5）
+  var x = 1; // 一些代码（请尝试将 x 改为 5）
 
   if (x == 1) {
     myResolve("OK");

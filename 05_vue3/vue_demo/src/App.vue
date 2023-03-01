@@ -1,10 +1,10 @@
 <template>
-  <!-- <div class="back"> -->
+  <div class="back"> -->
     <!-- 这是父组件 -->
-    <!-- <h2>姓名:{{res}}</h2> -->
+    <h2>姓名:{{res}}</h2>
     <!-- vue3-010.vue用到 -->
-    <!-- <button @click="btnEvent">点击传值给子组件</button> -->
-  <!-- </div> -->
+    <button @click="btnEvent">点击传值给子组件</button>
+  </div>
 
   <!-- 生命周期函数demo:vue3-012有用到 -->
   <!-- <h2 @click="v1 = !v1">点击显示隐藏子组件</h2> -->
@@ -37,7 +37,7 @@
 // import HelloWorld from './components/vue3-013.vue'
 import HelloWorld from './components/vue3-014.vue'
 
-import { computed, ref, onErrorCaptured} from 'vue'
+import { computed, ref, onErrorCaptured, reactive} from 'vue'
 import { useStore } from 'vuex'
 import plbLic from './config/public'
 
@@ -48,13 +48,13 @@ export default {
   },
   setup() {
     //#region 
-    // const p1 = reactive({name: '马云', age: 50})
+    const p1 = reactive({name: '马云', age: 50})
     // provide('name', p1)   // 进入页面自动传值
 
-    // const val = ref() // ref节点，把ref节点绑定到子组件
-    // function btnEvent() {
-    //   val.value.receive(p1) // 给子组件传值
-    // }
+    const val = ref() // ref节点，把ref节点绑定到子组件
+    function btnEvent() {
+      val.value.receive(p1) // 给子组件传值
+    }
 //#endregion
 
 //#region 
@@ -79,7 +79,7 @@ export default {
     //   company: '阿里巴巴'
     // })
     const res_a = plbLic()
-    return {res, v1, res_a}
+    return {res, v1, res_a, btnEvent}
   },
 }
 </script>

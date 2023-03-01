@@ -3,8 +3,7 @@ function myDisplayer(some) {
 }
 
 let myPromise = new Promise(function (myResolve, myReject) {
-    let x = 0;
-
+    let x = 1;
     // 一些代码（请尝试将 x 改为 5）
 
     if (x == 1) {

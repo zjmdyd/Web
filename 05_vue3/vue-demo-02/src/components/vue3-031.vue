@@ -3,7 +3,7 @@
         <button id="show-modal" @click="showModal = true">Show Modal</button>
 
         <Teleport to="body">
-            <!-- 父组件可以通过 v-on (缩写为 @) 来监听事件 -->
+            <!-- 父组件可以通过 v-on (缩写为 @) 来监听子组件触发的事件 -->
             <ZJModal :show="showModal" @close="showModal = false">
                 <template #header>
                     <h3>custom header</h3>
