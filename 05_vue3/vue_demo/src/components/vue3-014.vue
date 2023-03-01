@@ -1,17 +1,20 @@
 <template>
     <div class="test1">测试1</div>
     <div class="test2">测试2</div>
-    <div class="block1">
+    <div class="block1 mb10">
         <img class="img1" src="../assets/logo.png">
     </div>
-    <div class="block2">
+    <hr />
+    <i>haha</i><br />
+    <em>gegeg</em>
+    <div class="block2 mb10">
         <img class="img2" src="../assets/logo.png">
     </div>
-    <div class="block3">
+    <div class="block3 mb10">
         <img class="img3" src="../assets/logo.png">
         子元素X
     </div>
-    <div class="block4">
+    <div class="block4 mb10">
         <img class="img4" src="../assets/logo.png">
         <span class="a">子元素Y</span>
     </div>
@@ -45,13 +48,17 @@
 /* 解决图片下方的空隙下边4种方法都可以  */
 .block2 {
     background: greenyellow;
-    /* line-height: 0; */
-    /* font-size: 0; */
+    /*方法1*/  
+    line-height: 0;      
+    /*方法2*/  
+    /* font-size: 0; */     
 }
 
 .img2 {
-    /* display: block; */
-    /* vertical-align: bottom; */
+    /*方法3*/
+    /* display: block; */        
+    /*方法4*/   
+    /* vertical-align: bottom; */   
     
     background-color: red;
 }
@@ -77,9 +84,9 @@
 各种上面提到的线（基线、顶线、主线、底线等）都在高度为0的这条线上，绝对中心线和中线重合
 */
 .block4 {
-    background: #fe0;
     font-size: 0;
     line-height: 250px;
+    background: #fe0;
 }
 
 .img4 {
@@ -92,4 +99,7 @@
     vertical-align: middle;
 }
 
+.mb10 {
+    margin-bottom:  16px;
+}
 </style>

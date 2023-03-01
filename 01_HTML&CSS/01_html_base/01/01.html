@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title></title>
 </head>
+
 <body>
 	<!-- 6级标题 -->
 	<h1>HTML5学习之路</h1>
@@ -11,27 +13,38 @@
 	<h4>HTML5学习之路</h4>
 	<h5>HTML5学习之路</h5>
 	<h6>HTML5学习之路</h6>
-	
-	<hr />	<!-- 水平线 -->
-	<!--倾斜-->
+
+	<hr /> <!-- 水平线 -->
+	<!-- 倾斜
+	i 标签：仅仅是UI层面的斜体样式，并不具备HTML语义
+	em标签：不仅是在UI层面的斜体样式，具备HTML语义，表示强调
+	em对SEO更友好
+	-->
 	<i>主要讲解HTML几个常用标签的语法和运用,表格的语法和相关属性,语法和相关属性。</i><br />
 	<em>主要讲解HTML几个常用标签的语法和运用,表格的语法和相关属性,语法和相关属性。</em><br />
-	<!--加粗-->
+
+	<!--  加粗
+		b标签：仅仅是UI层面的加粗样式，并不具备HTML语义
+		strong标签：不仅是在UI层面的加粗样式，具备HTML语义，表示强调
+		strong对SEO更友好
+	  -->
 	<b>主要讲解HTML几个常用标签的语法和运用,表格的语法和相关属性,语法和相关属性。</b><br />
 	<strong>主要讲解HTML几个常用标签的语法和运用,表格的语法和相关属性,语法和相关属性。</strong><br />
-	<!--下划线-->
+	<!--文字带下划线-->
 	<u>主要讲解HTML几个常用标签的语法和运用,表格的语法和相关属性,语法和相关属性。</u><br />
 
 	<hr />
 	<!-- 字符实体 -->
+	<h2>字符实体</h2>
 	&lt;主要讲解HTML几个常用标签的语法和运用,表格的语法和相关属性,语法和相关属性。&gt;<br /><!-- 尖括号 -->
 	&nbsp;&nbsp;&nbsp;&nbsp;主要讲解HTML几个常用标签的语法和运用,表格的语法和相关属性,语法和相关属性。<br /><!-- 缩进 -->
 	<h1>&copy;</h1><!--版权符号-->
 
 	<!-- Div -->
-	<div style="width:100px; height:100px; background:#f00;">HTML5学习</div> <!-- 块元素 -->
+	<div style="width:100px; height:100px; background:#f00;">HTML5学习:我是块元素</div> <!-- 块元素 -->
 	<span style="width:100px; height:100px; background:#ff0;">HTML5学习</span> <br /><!-- 行内元素 -->
-	<strong><span style="width:100px; height:100px; background:#f00;">主要讲解HTML</span>几个常用标签的语法和运用,表格的语法和相关属性,语法和相关属性。</strong><br />
+	<strong><span
+			style="width:100px; height:100px; background:#f00;">主要讲解HTML</span>几个常用标签的语法和运用,表格的语法和相关属性,语法和相关属性。</strong><br />
 
 	<!-- 列表 -->
 	<!-- 无序列表 -->
@@ -53,10 +66,10 @@
 	</ol>
 
 	<!-- 自定义列表 -->
-	
+
 	<dl>
-		<dt>HTML</dt> 		<!-- 定义列表中的项目 -->
-		<dd>哇哈哈哈</dd>		<!-- 描述列表中的项目 -->
+		<dt>HTML</dt> <!-- 定义列表中的项目 -->
+		<dd>哇哈哈哈</dd> <!-- 描述列表中的项目 -->
 		<dd>哇哈哈哈</dd>
 		<dt>HTML5</dt>
 		<dd>哇哈哈哈</dd>
@@ -70,4 +83,5 @@
 	<!-- img -->
 	<img src="images/eg_bulbon.gif" alt="图片示例" title="示例图片">
 </body>
+
 </html>

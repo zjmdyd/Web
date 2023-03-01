@@ -5,12 +5,13 @@
 
 <script>
 
-import { onBeforeMount, onMounted, onBeforeUpdate, onUpdated, 
+import { onActivated, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, 
     onBeforeUnmount, onUnmounted, ref} from 'vue';
 
 export default({
     setup(){
         console.log('setup')    // 会最先打印,写到方法后边也是一样
+
         onBeforeMount(()=>{
             console.log('onBeforeMount, 在挂载之前被调用')
         })
@@ -29,6 +30,10 @@ export default({
         })
         onUnmounted(()=>{
             console.log('onUnmounted, 卸载组件实例后调用')
+        })
+
+        onActivated(()=>{
+            console.log('onActivated, ')
         })
 
         const p1 = ref(0)

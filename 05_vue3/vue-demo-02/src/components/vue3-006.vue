@@ -1,31 +1,31 @@
 <template>
-    <div>
-        <button @click="warn('Form cannot be submitted yet.', $event)">
-  Submit
-</button>
-    </div>
+  <div>
+    <button @click="warn('Form cannot be submitted yet.', $event)">
+      Submit
+    </button>
+  </div>
 </template>
 
 <script setup>
 
 function warn(message, event) {
-    console.log(message)
-    console.log(event)
-    if(event) {
-        /*preventDefault
-        该方法将通知 Web 浏览器不要执行与事件关联的默认动作（如果存在这样的动作）。
-        例如，如果 type 属性是 “submit”，在事件传播的任意阶段可以调用任意的事件句柄，
-        通过调用该方法，可以阻止提交表单。注意，如果 Event 对象的 cancelable 属性是 fasle，
-        那么就没有默认动作，或者不能阻止默认动作。无论哪种情况，调用该方法都没有作用。
-        */
-        event.preventDefault()
+  console.log(message)
+  console.log(event)
+  if (event) {
+    /*preventDefault
+    该方法将通知 Web 浏览器不要执行与事件关联的默认动作（如果存在这样的动作）。
+    例如，如果 type 属性是 “submit”，在事件传播的任意阶段可以调用任意的事件句柄，
+    通过调用该方法，可以阻止提交表单。注意，如果 Event 对象的 cancelable 属性是 fasle，
+    那么就没有默认动作，或者不能阻止默认动作。无论哪种情况，调用该方法都没有作用。
+    */
+    event.preventDefault()
 
-        /*event.stopPropagation();
-        终止事件在传播过程的捕捉、目标处理或起泡阶段进一步传播。
-        调用该方法后，该节点上处理该事件的处理程序将被调用，事件不再被分派到其他节点。
-        */
-    }
-    alert(message)
+    /*event.stopPropagation();
+    终止事件在传播过程的捕捉、目标处理或起泡阶段进一步传播。
+    调用该方法后，该节点上处理该事件的处理程序将被调用，事件不再被分派到其他节点。
+    */
+  }
+  alert(message)
 }
 /*
 @click.prevent.self 会阻止元素及其子元素的所有点击事件的默认行为

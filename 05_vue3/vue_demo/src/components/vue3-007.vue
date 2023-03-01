@@ -46,7 +46,7 @@ export default({
         // watch(()=>p3.age.num, (newVal, oldVal)=> {
         //     console.log(newVal, oldVal)
         // })
-        // 同上，多了最后欧一个参数,进入页面立即监听的一个参数
+        // 同上，多了最后一个参数,进入页面立即监听的一个参数
         watch(()=>p3.age.num, (newVal, oldVal)=> {
             console.log(newVal, oldVal)
         }, {immediate: true})
