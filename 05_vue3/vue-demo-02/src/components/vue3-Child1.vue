@@ -1,11 +1,17 @@
 <template>
+    <input v-model="msg"/>
     <button @click="sendMsg">传值</button>
 </template>
 
 <script setup>
 
+import { ref } from 'vue';
 import Mitt from './mitt.js'
+
+const msg = ref('haha')
 const sendMsg = () => {
-    Mitt.emit('sendMsg', {data:'兄弟的值'})
+    console.log('msg = ')
+    console.log(msg.value)
+    Mitt.emit('sendMsg', msg.value)
 }
 </script>

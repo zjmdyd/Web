@@ -14,6 +14,7 @@
     <div class="mg8">父组件通过ref节点绑定访问子组件信息: {{ receiveSubrefMsg }}</div>
     <hr />
     <HelloWorld :msg="parentMsg" :msg2="msg2" @sendMsg="getFromChild" @parentFun="parentFun" ref="childeRef" />
+    <hr />
     <Child1 />
     <Child2 />
     <hr />
@@ -27,8 +28,7 @@
 import HelloWorld from './components/vue3-Child.vue'     // defineProps传值
 import Child1 from './components/vue3-Child1.vue'     // defineProps传值
 import Child2 from './components/vue3-Child2.vue'     // defineProps传值
-// import HelloWorld from './components/vue3-033.vue'        // v-show
-import HelloWorld2 from './components/vue3-031.vue'        // Teleport
+import HelloWorld2 from './components/vue3-018.vue'        // 
 
 
 import { onMounted, computed, ref, provide } from 'vue';
@@ -108,6 +108,8 @@ export default {
 // import HelloWorld from './components/vue3-030.vue'       // KeepAlive内置组件
 // import HelloWorld from './components/vue3-031.vue'        // Teleport
 // import HelloWorld from './components/vue3-032.vue'        // routes
+// import HelloWorld from './components/vue3-033.vue'        // v-show
+// import HelloWorld2 from './components/vue3-034.vue'        // Suspense
 </script>
 
 <style>
