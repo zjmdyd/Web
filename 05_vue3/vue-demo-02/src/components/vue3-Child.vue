@@ -2,13 +2,13 @@
   <div>
     <span>****子组件*****</span><br />
     <div class="mg8">父组件传过来的值: {{ parentMsg }}</div>
-    <div class="mg8">子组件通过inject()接收父组件传过来的值: {{ parentMsg2 }}</div>
+    <div class="mg8">子组件通过inject()接收父组件传过来的值: {{ parentMsg2.value }}</div>
     
     <div class="mg8">
       子组件传给父组件的值:<input class="mg8" v-model="subValue" @input="inputChange">
     </div>
     <div class="mg8">
-      子组件通过ref功能传给父组件的值: {{ refMsg }}
+      子组件通过defineExpose暴露给父组件的值: {{ refMsg }}
     </div>
     <button @click="getParentFun">调用父组件方法</button>
   </div>

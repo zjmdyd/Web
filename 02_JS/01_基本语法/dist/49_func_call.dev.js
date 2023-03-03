@@ -28,9 +28,5 @@ var person = {
     return this.firstName + " " + this.lastName + "," + city + "," + country;
   }
 };
-var person1 = {
-  firstName: "Bill",
-  lastName: "Gates"
-};
-var n2 = person.fullName.call(person1, "Seattle", "USA");
+var n2 = person.fullName.call(person2, "Seattle", "USA");
 console.log(n2);

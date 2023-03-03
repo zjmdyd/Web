@@ -5,31 +5,39 @@
   <!-- <HelloWorld msg="Welcome to You vue.js App"/> -->
   <div>
     <div class="mg8">父组件的信息:<input class="mg8" v-model="parentMsg" /></div>
-    <div class="mg8">父组件通过provide传给子组件的值: {{ msg2 }}</div>
+    <!-- <div class="mg8">父组件通过provide传给子组件的值: {{ msg2 }}</div> -->
+    <div>
+      父组件通过provide传给子组件的值:<input v-model="msg2"/>
+    </div>
+    <!-- <div class="mg8">父组件通过provide传给子组件的值: {{ msg2 }}</div> -->
     <div class="mg8">父组件接收子组件的信息: {{ subMsg }}</div>
     <div class="mg8">父组件通过ref节点绑定访问子组件信息: {{ receiveSubrefMsg }}</div>
     <hr />
-    <!-- <HelloWorld :msg="parentMsg" :msg2="msg2" @sendMsg="getFromChild" @parentFun="parentFun" ref="childeRef" /> -->
+    <HelloWorld :msg="parentMsg" :msg2="msg2" @sendMsg="getFromChild" @parentFun="parentFun" ref="childeRef" />
     <Child1 />
     <Child2 />
     <hr />
-    <HelloWorld />
+    <HelloWorld2 />
+    <hr />
   </div>
   <!-- <router-view></router-view> -->
 </template>
 
 <script>
-// import HelloWorld from './components/vue3-Child.vue'     // defineProps传值
+import HelloWorld from './components/vue3-Child.vue'     // defineProps传值
 import Child1 from './components/vue3-Child1.vue'     // defineProps传值
 import Child2 from './components/vue3-Child2.vue'     // defineProps传值
-import HelloWorld from './components/vue3-033.vue'        // v-show
+// import HelloWorld from './components/vue3-033.vue'        // v-show
+import HelloWorld2 from './components/vue3-031.vue'        // Teleport
 
-import { onMounted, ref, provide } from 'vue';
+
+import { onMounted, computed, ref, provide } from 'vue';
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
+    HelloWorld2,
     Child1,
     Child2
   },
@@ -37,7 +45,11 @@ export default {
   setup() {
     const parentMsg = ref('父组件传给子组件的信息')
     const msg2 = ref('父传子msg2')
-    provide("msg2", msg2)
+    // provide("msg2", msg2) // 可以直接传
+    // 用计算属性实时更新
+    provide("msg2", computed(() => {
+      return msg2
+    }))
     const subMsg = ref('')
     // 
     const getFromChild = (val) => {
@@ -54,9 +66,9 @@ export default {
     const receiveSubrefMsg = ref('')
     onMounted(() => {
       //获取子组件属性
-      // receiveSubrefMsg.value = childeRef.value.refMsg
+      receiveSubrefMsg.value = childeRef.value.refMsg
       //调用子组件方法
-      // childeRef.value.loadList()
+      childeRef.value.loadList()
     })
 
     return { receiveSubrefMsg, childeRef, subMsg, parentMsg, msg2, parentFun, getFromChild }
@@ -70,7 +82,7 @@ export default {
 // import HelloWorld from './components/vue3-005.vue'
 // import HelloWorld from './components/vue3-006.vue'
 // import HelloWorld from './components/vue3-007.vue'
-// import HelloWorld from './components/vue3-008.vue'
+// import HelloWorld from './components/vue3-008.vue' // getCurrentInstance();
 // import HelloWorld from './components/vue3-009.vue'
 // import HelloWorld from './components/vue3-010.vue'
 // import HelloWorld from './components/vue3-011.vue' // AlertBox

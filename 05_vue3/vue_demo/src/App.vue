@@ -1,6 +1,6 @@
 <template>
   <div class="back"> -->
-    <!-- 这是父组件 -->
+    *******这是父组件******
     <h2>姓名:{{res}}</h2>
     <!-- vue3-010.vue用到 -->
     <button @click="btnEvent">点击传值给子组件</button>
@@ -19,23 +19,26 @@
   <!-- 组组件传值vue3-010.vue会用到 -->
   <!-- <HelloWorld ref=""/> --> 
   <HelloWorld />
+  <hr />
+  <HelloWorld2></HelloWorld2>
 </template>
 
 <script>
 // import HelloWorld from './components/vue3-001.vue'
 // import HelloWorld from './components/vue3-002.vue'
 // import HelloWorld from './components/vue3-003.vue'
-// import HelloWorld from './components/vue3-004.vue'
-// import HelloWorld from './components/vue3-005.vue'
-import HelloWorld from './components/vue3-006.vue' //computed
+// import HelloWorld from './components/vue3-004.vue' // toRef
+// import HelloWorld from './components/vue3-005.vue'    // toRefs
+// import HelloWorld from './components/vue3-006.vue' //computed
 // import HelloWorld from './components/vue3-007.vue'
 // import HelloWorld from './components/vue3-008.vue'
 // import HelloWorld from './components/vue3-009.vue'
 // import HelloWorld from './components/vue3-010.vue'
-// import HelloWorld from './components/vue3-011.vue'
+import HelloWorld from './components/vue3-011.vue' // vuex
 // import HelloWorld from './components/vue3-012.vue'    // vue生命周期
 // import HelloWorld from './components/vue3-013.vue'
 // import HelloWorld from './components/vue3-014.vue'
+import HelloWorld2 from './components/vue3-015.vue' // export
 
 import { computed, ref, onErrorCaptured, reactive} from 'vue'
 import { useStore } from 'vuex'
@@ -44,7 +47,8 @@ import plbLic from './config/public'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    HelloWorld2
   },
   setup() {
     //#region 
@@ -62,9 +66,10 @@ export default {
     const store = useStore()
     /*
     computed是计算属性,当一个属性受一个或者多个属性影响的时候可以使用
+    当一个数据受多个数据影响时，可以使用computed
     */
     const res = computed(()=>{
-        // console.log(store.state.name)
+        console.log('父组件计算属性监听store.state.name变化:' + store.state.name)
         return store.state.name
     })
 

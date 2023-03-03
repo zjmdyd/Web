@@ -5,31 +5,27 @@ call() 方法是预定义的 JavaScript 方法。
 */
 
 var person = {
-    fullName: function() {
-        return this.firstName + " " + this.lastName;
-    }
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  }
 }
 var person1 = {
-    firstName:"Bill",
-    lastName: "Gates",
+  firstName: "Bill",
+  lastName: "Gates",
 }
 var person2 = {
-    firstName:"Steve",
-    lastName: "Jobs",
+  firstName: "Steve",
+  lastName: "Jobs",
 }
-var n = person.fullName.call(person1);  // 将返回 "Bill Gates"
+var n = person.fullName.call(person1); // 将返回 "Bill Gates"
 console.log(n)
 
 // 带参数的 call() 方法
 // call() 方法可接受参数：
 var person = {
-    fullName: function(city, country) {
-      return this.firstName + " " + this.lastName + "," + city + "," + country;
-    }
+  fullName: function (city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
   }
-  var person1 = {
-    firstName:"Bill",
-    lastName: "Gates"
-  }
-  var n2 = person.fullName.call(person1, "Seattle", "USA");
-  console.log(n2)
+}
+var n2 = person.fullName.call(person2, "Seattle", "USA");
+console.log(n2)

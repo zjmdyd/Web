@@ -27,6 +27,8 @@ var numbers = [45, 4, 9, 16, 25];
 var over18 = numbers.filter(myFunction1);
 
 function myFunction1(value, index, array) {
+  // console.log(index)
+  // console.log(array)  // [ 45, 4, 9, 16, 25 ] 当前元素属于的数组对象
   return value > 18;
 }
 // over18 = 45,25
