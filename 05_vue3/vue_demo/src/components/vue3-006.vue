@@ -7,11 +7,13 @@
     马云公司:<input type="text" v-model="mayun_a"><br>
     马化腾公司:<input type="text" v-model="huateng_a"><br>
     文本拼接:<input type="text" v-model="sum_a">
+    <br />
+    <button @click="btnEvent">修改年龄</button>
   </div>
 </template>
 
 <script>
-import { computed, reactive, toRefs } from 'vue';
+import { ref, computed, reactive, toRefs } from 'vue';
 
 export default ({
   setup() {
@@ -21,6 +23,7 @@ export default ({
     const huateng_a = ''
 
     const res = reactive({ mayun, huateng, mayun_a, huateng_a })
+
     // 计算年龄
     const sum = computed(() => {
       console.log('computed方法执行了')
@@ -30,7 +33,12 @@ export default ({
     const sum_a = computed(() => {
       return res.mayun_a + res.huateng_a
     })
-    return { ...toRefs(res), sum, sum_a }
+
+    // computed具有缓存的特点,即当它所依赖的属性发生改变的时候它才会重新执行内部逻辑
+    const btnEvent = () => {
+      res.mayun = 2
+    }
+    return { ...toRefs(res), sum, sum_a, btnEvent }
   },
 })
 </script>

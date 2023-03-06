@@ -30,16 +30,17 @@
 // import HelloWorld from './components/vue3-004.vue' // toRef
 // import HelloWorld from './components/vue3-005.vue'    // toRefs
 // import HelloWorld from './components/vue3-006.vue' //computed
-// import HelloWorld from './components/vue3-007.vue'
+import HelloWorld from './components/vue3-007.vue'    // watch()
 // import HelloWorld from './components/vue3-008.vue'
 // import HelloWorld from './components/vue3-009.vue'
 // import HelloWorld from './components/vue3-010.vue'
-import HelloWorld from './components/vue3-011.vue' // vuex
+// import HelloWorld from './components/vue3-011.vue' // vuex
 // import HelloWorld from './components/vue3-012.vue'    // vue生命周期
 // import HelloWorld from './components/vue3-013.vue'
 // import HelloWorld from './components/vue3-014.vue'
 // import HelloWorld2 from './components/vue3-015.vue' // export
 import HelloWorld2 from './components/vue3-016.vue' // 自定义指令
+// import HelloWorld2 from './components/vue3-017.vue' // 自定义指令
 
 import { computed, ref, onErrorCaptured, reactive} from 'vue'
 import { useStore } from 'vuex'

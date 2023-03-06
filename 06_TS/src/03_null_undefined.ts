@@ -5,9 +5,7 @@
 
 1）都是原始类型的值，且保存在栈中变量本地
 2）进行条件判断时，两者都是false：
-
         console.log(undefined == null);//true ECMAScript认为undefined是null派生出来的，所以定义他们值是相同的
-
 2、不同点
 
 1）null是js的关键字，表示空值；undefined不是js的关键字，它是一个全局变量

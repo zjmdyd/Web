@@ -37,19 +37,19 @@ export default({
 
         // 三；监听整个reactive响应式数据的变化
         // 只能监听到最新的结果，上一次的数据是监听不到的
-        //  watch(p3, (newVal, oldVal)=> {
-        //     console.log(newVal, oldVal)
-        // })
+         watch(p3, (newVal, oldVal)=> {
+            console.log(newVal, oldVal)
+        }, {deep:false})
 
         // 三；监听reactive响应式数据中某一个值的变化
         // 最新的结果和上一次结果都能得到
         // watch(()=>p3.age.num, (newVal, oldVal)=> {
         //     console.log(newVal, oldVal)
         // })
-        // 同上，多了最后一个参数,进入页面立即监听的一个参数
-        watch(()=>p3.age.num, (newVal, oldVal)=> {
-            console.log(newVal, oldVal)
-        }, {immediate: true})
+        // // 同上，多了最后一个参数,进入页面立即监听的一个参数
+        // watch(()=>p3.age.num, (newVal, oldVal)=> {
+        //     console.log(newVal, oldVal)
+        // }, {immediate: true})
         return {p1, p2, p3}
     },
 })

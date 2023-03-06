@@ -10,11 +10,14 @@ console.log(sum(1 , 2))
 function say1(name: string): void {
     console.log(name)
 }
+say1('john')
 
 // 匿名函数
 let say2 = function(name: string): void {
     console.log(name)
 }
+
+say2('baby')
 
 // 箭头函数
 let say3 = (name: string): void => {
@@ -25,6 +28,7 @@ let say3 = (name: string): void => {
 let mySum1 = function (x: number, y: number): number {
     return x + y;
 };
+console.log(mySum1(10, 5))  // 15
 /*
 这是可以通过编译的，不过事实上，上面的代码只对等号右侧的匿名函数进行了类型定义，而等号左边的 mySum，
 是通过赋值操作进行类型推论而推断出来的。如果需要我们手动给 mySum 添加类型，则应该是这样：

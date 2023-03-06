@@ -4,9 +4,21 @@ reduceRight() 方法在数组中从右到左工作。
 reduceRight() 方法不会减少原始数组。
 */
 var numbers1 = [1, 2, 3, 4, 5];
+var sum = numbers1.reduceRight(myFunction2, 10);
+
+/* 有初始值
 var sum = numbers1.reduceRight(myFunction2);
 
-/*
+total = 10, value = 5
+total = 15, value = 4
+total = 19, value = 3
+total = 22, value = 2
+total = 24, value = 1
+*/
+
+/* 无初始值
+var sum = numbers1.reduceRight(myFunction2);
+
 total = 5, value = 4
 total = 9, value = 3
 total = 12, value = 2

@@ -3,7 +3,7 @@ var counter = 0;
 
 // 递增计数器的函数
 function add() {
-  var counter = 0;  // 局部变量，函数外不起作用
+  var counter = 0; // 局部变量，函数外不起作用
   counter += 1;
 }
 
@@ -11,7 +11,7 @@ function add() {
 add();
 add();
 add();
-console.log('counter = ' + counter)    // 0
+console.log('counter = ' + counter) // 0
 
 /*
 JavaScript 嵌套函数
@@ -20,10 +20,13 @@ JavaScript 嵌套函数
 JavaScript 支持嵌套函数。嵌套函数可以访问其上的作用域。
 */
 function add2() {
-    var counter = 0;
-    function plus() {counter += 1;}
-    plus();     
-    return counter; 
+  var counter = 0;
+
+  function plus() {
+    counter += 1;
+  }
+  plus();
+  return counter;
 }
 console.log('add2 = ' + add2()) // 1
 
@@ -46,12 +49,12 @@ console.log('add2 = ' + add2()) // 1
 
 */
 var add4 = (function () {
-    console.log('进入add4自调用函数')
-    var counter = 0;
-    return function () {
-        console.log('调用闭包counter = ' + counter)
-        return counter += 1;
-    }
+  console.log('进入add4自调用函数')
+  var counter = 0;
+  return function () {
+    console.log('调用闭包counter = ' + counter)
+    return counter += 1;
+  }
 })()
 console.log(add4.toString())
 console.log(add4())

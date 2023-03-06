@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <div>*****自定义全局指令*****</div>
+  <div id="superDiv">
+    <div>*****自定义全局指令v-focus*****</div>
     <input v-focus/>
     <div>*****自定义局部指令*****</div>
     <div id="cus_directive" v-description="{ color: 'white', text: 'hello!' }"></div>
+    <div>*****自定义全局指令v-pin*****</div>
     <img v-pin:warning.right.top='true' src="../assets/logo.png"/>
   </div>
 </template>

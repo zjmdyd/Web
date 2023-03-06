@@ -44,6 +44,7 @@ console.log("sum = " + sum);
 /*
 reduce() 方法能够接受一个初始值：
 */
+// var numbers1 = [45, 4, 9, 16, 25];
 var sum = numbers1.reduce(myFunction3, 100);
 
 function myFunction3(total, value) {
