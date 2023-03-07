@@ -28,7 +28,7 @@ function isFish(animal: Cat | Fish) {
 */
 // 此时可以使用类型断言，将 animal 断言成 Fish：
 function isFish(animal: Cat | Fish) {
-    if(typeof(animal as Fish).swim === 'function') {
+    if(typeof((animal as Fish).swim) === 'function') {
         return true
     }
     return false
@@ -39,5 +39,19 @@ let fish: Fish = {
         console.log('I am swimming');
     }
 }
+
+function go(animal: Cat | Fish) {
+    (animal as Fish).swim();
+}
+
 console.log(isFish(fish))
 fish.swim()
+go(fish)
+
+const tom3: Cat = {
+    name: 'Tom',
+    run() { console.log('run') }
+};
+// 此处编译不会报错，但在运行时会报错
+// 原因是 (animal as Fish).swim() 这段代码隐藏了 animal 可能为 Cat 的情况
+// go(tom3)    

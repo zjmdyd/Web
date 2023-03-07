@@ -15,4 +15,7 @@ function isApiError(error: Error) {
 }
 
 let apiError = new ApiError()
-console.log(isApiError(apiError))
+console.log(isApiError(apiError))   // true
+
+let httpError = new HttpError()
+console.log(isApiError(httpError))  // false

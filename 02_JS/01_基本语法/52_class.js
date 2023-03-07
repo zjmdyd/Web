@@ -28,6 +28,8 @@ class Model extends Car {
     show() {
         return this.present() + ', it is a ' + this.model;
     }
+// static 类方法是在类本身上定义的。
+// 您不能在对象上调用 static 方法，只能在对象类上调用
     // 静态方法
     static hello(x) {
         return "Hello!!" + x.carname;

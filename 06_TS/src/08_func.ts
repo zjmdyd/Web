@@ -12,11 +12,10 @@ function say1(name: string): void {
 }
 say1('john')
 
-// 匿名函数
+// 匿名函数:返回值void
 let say2 = function(name: string): void {
     console.log(name)
 }
-
 say2('baby')
 
 // 箭头函数
@@ -43,3 +42,14 @@ let mySum2:(x:number, y: number) => number = function (x: number, y: number): nu
 */
 console.log(mySum1(3, 8))
 console.log(mySum2(4, 6))
+/*
+function fa(name: string):void {}
+
+let fb = (name: string):string => {
+    return 'haha'
+}
+
+let fc:(name: string) => string = function(name: string): string {
+    return 'aa'
+}
+*/

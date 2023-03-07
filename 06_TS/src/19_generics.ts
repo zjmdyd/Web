@@ -110,10 +110,12 @@ class GenericNumber<T> {
     this.zeroValue = val
   }
 
-  add1: (x: T, y: T) => T = function (x: T, y: T): T {
+  add(x: T, y: T) { }
+  add1 = (x: T, y: T) => { }
+  add2: (x: T, y: T) => T = function (x: T, y: T): T {
     return x
   }
-  add(x: T, y: T){}
+
   min(): T {
     var min = this.arr[0];
     this.arr.forEach(function (value) {
@@ -127,7 +129,9 @@ class GenericNumber<T> {
 
 let myGenericNumber = new GenericNumber<number>(0);
 myGenericNumber.zeroValue = 0;
-myGenericNumber.add = function(x, y) { return x + y; };
+myGenericNumber.add = function (x, y) { return x + y; };
+myGenericNumber.add1 = function (x, y) { return x * y; };
 console.log(myGenericNumber.add(1, 2))
 myGenericNumber.arr = [1, 3, 5, 0]
 console.log(myGenericNumber.min())
+console.log(myGenericNumber.add1(4, 5))

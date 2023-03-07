@@ -2,9 +2,10 @@
 // 可以使用 ...rest 的方式获取函数中的剩余参数（rest 参数)
 // rest 参数只能是最后一个参数
 function push(array: any[], ...items: any[]) {
-    items.forEach(function(item) {
-        array.push(item);
-    });
+  items.forEach(function (item) {
+    console.log(item)
+    array.push(item);
+  });
 }
 
 let a: any[] = [];

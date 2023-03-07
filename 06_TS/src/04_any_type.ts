@@ -15,6 +15,7 @@ something = 'gg'
 something = 9
 console.log(typeof(something))
 
+// TypeScript 会在没有明确的指定类型的时候推测出一个类型，这就是类型推论
 /*
 never 和 void 的差异
 void 表示没有任何类型，never 表示永远不存在的值的类型。
