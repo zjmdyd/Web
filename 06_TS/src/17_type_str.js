@@ -1,3 +1,4 @@
+// 首先我们在终端运行tsc --watch **.ts (js文件名)
 document.title = 'TS学习';
 /*
 1、queryselector (selector)：获取某一个DOM元素
