@@ -1,3 +1,11 @@
+export interface Contact {
+  name: string,
+  phone?: string,
+  email: string,
+  avatar: string,
+  userId: string,
+}
+
 type A_Record<K extends keyof any, T> = {
   [P in K]: T;
 };
@@ -7,6 +15,6 @@ const aa:A_StateTree = {'a': 1, 'b': 2}
 console.log(aa)
 
 
-type MyPick<T, K extends keyof T> = {
-  [P in K]: T[P];
-};
+// type MyPick<T, K extends keyof T> = {
+//   [P in K]: T[P];
+// };

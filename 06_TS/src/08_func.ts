@@ -12,7 +12,7 @@ function say1(name: string): void {
 }
 say1('john')
 
-// 匿名函数:返回值void
+// 匿名函数(函数表达式必须先声明再调用):返回值void
 let say2 = function(name: string): void {
     console.log(name)
 }

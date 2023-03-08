@@ -44,9 +44,9 @@ function go(animal: Cat | Fish) {
     (animal as Fish).swim();
 }
 
-console.log(isFish(fish))
-fish.swim()
-go(fish)
+console.log(isFish(fish))   // true
+fish.swim() // I am swimming
+go(fish)    // I am swimming
 
 const tom3: Cat = {
     name: 'Tom',

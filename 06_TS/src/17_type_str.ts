@@ -8,7 +8,7 @@ selector 参数：是一个css选择器（标签、类、id选择器等）
 */
 // let title = document.querySelector('#title')
 // 需要通过类型断言来指定DOM元素的具体类型，才可以使用innerText属性
-let title = document.querySelector('#title') as HTMLHeadingElement  
+let title = document.querySelector('#title') as HTMLHeadingElement
 // let elm = document.querySelector('p')
 let elm = document.querySelector('p') as HTMLParagraphElement
 let elms = document.querySelectorAll('p')
@@ -29,7 +29,7 @@ dom.classList属性：类样式操作，也就是操作类名，比如，添加�
 dom.classListremove(类名1，类名2， ...)
 【判断类名是否存在】
 let has = dom.classList.contains(类名)
-*/ 
+*/
 elm.classList.add('b', 'c')
 console.log('elms')
 console.log(elms)
@@ -43,12 +43,40 @@ function handleEvent(ele: Element | null, event: EventNames) {
 function btnEvent(e: string) {
   console.log('按钮点击了:' + e)
 }
+
+function handleClick() {
+  console.log('click点击事件触发了')
+}
+let btn = document.getElementById('hello')
+let removeBtn = document.getElementById('remove')
+// 注意添加和移除要是同一个方法, 如果只想触发一次可以添加第3个参数{ once: true }
+btn?.addEventListener('click', handleClick) // 添加事件监听
+removeBtn?.addEventListener('click', function () {
+  console.log('removeBtn点击事件触发了')
+  btn?.removeEventListener('click', handleClick)  // 移除事件监听
+})
+
+// 添加事件监听
+btn?.addEventListener('mouseenter', function (event) {
+  console.log(event)
+  console.log('鼠标mouseenter事件触发了')
+
+  let target = event.target as HTMLButtonElement
+  target.style.fontSize = '30px'
+})
+
+btn?.addEventListener('mouseleave', function (event) {
+  console.log('鼠标mouseleave事件触发了')
+  let target = event.target as HTMLButtonElement
+  target.style.fontSize = '12px'
+})
+
+handleEvent(btn, 'click');  // 没问题
+// handleEvent(document.getElementById('world'), 'dblclick'); // 报错，event 不能为 'dblclick'
+
 // function greeter(person: string) {
 //   return "Hello, " + person;
 // }
 // let str1 = "Jane User";
 
 // document.body.innerHTML = greeter(str1);
-
-handleEvent(document.getElementById('hello'), 'click');  // 没问题
-// handleEvent(document.getElementById('world'), 'dblclick'); // 报错，event 不能为 'dblclick'

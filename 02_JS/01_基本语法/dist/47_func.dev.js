@@ -35,8 +35,12 @@ function myFunc3(y) {
 自调用表达式是自动被调用（开始）的，在不进行调用的情况下。
 函数表达式会自动执行，假如表达式后面跟着 ()。
 */
+// (function myFunc4() {
+//     console.log('haha')
+// })()
+// 自执行函数只能调用一次，与myFunc4一起调用会报错
 
 
-(function myFunc4(y) {
-  console.log('haha');
-})();
+(function (str) {
+  console.log('没有名字: ' + str);
+})('没有名字，自执行函数');
