@@ -15,3 +15,5 @@ let stu: Dukey = {
   name: 'wang',
   sex: '女'
 }
+
+

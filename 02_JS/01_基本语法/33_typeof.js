@@ -8,7 +8,7 @@ typeof new Date()             // 返回 "object"
 typeof function () {}         // 返回 "function"
 typeof myCar                  // 返回 "undefined" *
 typeof null                   // 返回 "object"
-
+console.log(typeof "Bill" === 'string')
 /*
 您无法使用 typeof 来确定 JavaScript 对象是否是数组（或日期）
 typeof 运算符会为数组返回 "object"，因为在 JavaScript 中数组是对象

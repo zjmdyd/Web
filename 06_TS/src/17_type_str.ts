@@ -34,7 +34,6 @@ elm.classList.add('b', 'c')
 console.log('elms')
 console.log(elms)
 
-
 type EventNames = 'click' | 'scroll' | 'mousemove';
 function handleEvent(ele: Element | null, event: EventNames) {
   console.log('调用了handleEvent方法')
