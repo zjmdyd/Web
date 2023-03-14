@@ -1,3 +1,5 @@
+export default Directions;
+
 declare enum Directions {
     Up,
     Down,
@@ -5,4 +7,3 @@ declare enum Directions {
     Right
 }
 
-export default Directions;

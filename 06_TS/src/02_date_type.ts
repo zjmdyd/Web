@@ -2,9 +2,6 @@ let  myName: string = 'Tom'
 let sentence: string = `Hello, my name is ${myName}`
 console.log(sentence)
 
-
-
-
 console.log(typeof "asdf" === 'string')
 let num0: number = +'a'
 console.log(num0)

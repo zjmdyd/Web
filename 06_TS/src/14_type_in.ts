@@ -4,7 +4,6 @@ type Keys = 'name' | 'sex'
 type Dukey = {
   [key in Keys]: string // 类似于for...in
 }
-
 /*
 type Dukey = {
   name: string,
