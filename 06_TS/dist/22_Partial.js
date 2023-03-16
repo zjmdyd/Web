@@ -1,6 +1,6 @@
 "use strict";
 function updateTodo(todo, fieldsToUpdate) {
-    return Object.assign(Object.assign({}, todo), fieldsToUpdate);
+    return { ...todo, ...fieldsToUpdate };
 }
 const todo1_1 = {
     title: 'org task',
@@ -9,7 +9,7 @@ const todo1_1 = {
 const todo1_2 = updateTodo(todo1_1, { description: 'throw out trash' });
 console.log(todo1_2);
 function updateTodo2(todo, fieldsToUpdate) {
-    return Object.assign(Object.assign({}, todo), fieldsToUpdate);
+    return { ...todo, ...fieldsToUpdate };
 }
 const todo2_1 = {
     title: 'org task',

@@ -66,15 +66,16 @@ createArray1 = function (length, value) {
     return result;
 };
 class GenericNumber {
+    zeroValue;
+    arr = [];
     constructor(val) {
-        this.arr = [];
-        this.add1 = (x, y) => { };
-        this.add2 = function (x, y) {
-            return x;
-        };
         this.zeroValue = val;
     }
     add(x, y) { }
+    add1 = (x, y) => { };
+    add2 = function (x, y) {
+        return x;
+    };
     min() {
         var min = this.arr[0];
         this.arr.forEach(function (value) {

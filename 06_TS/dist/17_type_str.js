@@ -45,19 +45,19 @@ function handleClick() {
 let btn = document.getElementById('hello');
 let removeBtn = document.getElementById('remove');
 // 注意添加和移除要是同一个方法, 如果只想触发一次可以添加第3个参数{ once: true }
-btn === null || btn === void 0 ? void 0 : btn.addEventListener('click', handleClick); // 添加事件监听
-removeBtn === null || removeBtn === void 0 ? void 0 : removeBtn.addEventListener('click', function () {
+btn?.addEventListener('click', handleClick); // 添加事件监听
+removeBtn?.addEventListener('click', function () {
     console.log('removeBtn点击事件触发了');
-    btn === null || btn === void 0 ? void 0 : btn.removeEventListener('click', handleClick); // 移除事件监听
+    btn?.removeEventListener('click', handleClick); // 移除事件监听
 });
 // 添加事件监听
-btn === null || btn === void 0 ? void 0 : btn.addEventListener('mouseenter', function (event) {
+btn?.addEventListener('mouseenter', function (event) {
     console.log(event);
     console.log('鼠标mouseenter事件触发了');
     let target = event.target;
     target.style.fontSize = '30px';
 });
-btn === null || btn === void 0 ? void 0 : btn.addEventListener('mouseleave', function (event) {
+btn?.addEventListener('mouseleave', function (event) {
     console.log('鼠标mouseleave事件触发了');
     let target = event.target;
     target.style.fontSize = '12px';

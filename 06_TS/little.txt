@@ -1,0 +1,37 @@
+tsc --init生成tsconfig.json
+
+ts-node运行.ts文件
+ts-node index.ts
+
+BOM（浏览器对象模型)
+DOM 文档对象模型（Document Object Model)
+
+通配符
+./* -当前目录中的任何文件。
+
+./** -当前目录和子目录中的任何文件。
+
+
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "baseUrl": "./", // types文件夹的相对路径
+    "paths": { "*": ["types/*"]}
+  }
+}
+
+/*
+  export特点
+① 导出时需要和导入的变量名称相同
+② 如果导出和定义变量分开，导出时变量名加{}
+③ 导入的时候变量名必须加{}
+④ 可以有多个export语句
+*/ 
+
+/* 
+  export default特点：
+① 引入时，可以变成不同的名称
+② 直接把所有内容都导出
+③ 引入时，设置的变量名不用加{}
+④ 只能有一个export default语句
+*/
