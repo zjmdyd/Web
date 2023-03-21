@@ -12,28 +12,30 @@
 创建类方法的语法与对象方法相同。
 */
 class Car {
-    constructor(brand) {
-        this.carname = brand;
-    }
-    present() {
-        return 'I have a ' + this.carname;
-    }
+  constructor(brand) {
+    this.carname = brand;
+  }
+  present() {
+    return 'I have a ' + this.carname;
+  }
 }
 
 class Model extends Car {
-    constructor(brand, mod) {
-        super(brand);
-        this.model = mod;
-    }
-    show() {
-        return this.present() + ', it is a ' + this.model;
-    }
-// static 类方法是在类本身上定义的。
-// 您不能在对象上调用 static 方法，只能在对象类上调用
-    // 静态方法
-    static hello(x) {
-        return "Hello!!" + x.carname;
-    }
+  constructor(brand, mod) {
+    super(brand);
+    this.model = mod;
+  }
+  show() {
+    return this.present() + ', it is a ' + this.model;
+  }
+  // static 类方法是在类本身上定义的。
+  // 您不能在对象上调用 static 方法，只能在对象类上调用
+  // 静态方法
+  static hello(x) {
+    return "Hello!!" + x.carname;
+  }
+  // name = '直接在类里面定义属性'
+  // static num = 22  // 
 }
 
 /*
@@ -43,3 +45,4 @@ class Model extends Car {
 let myCar = new Model("Ford", "Mustang")
 console.log(myCar.show())
 console.log(Model.hello(myCar))
+console.log(myCar.name)

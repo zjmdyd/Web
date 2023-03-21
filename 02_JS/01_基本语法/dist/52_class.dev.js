@@ -77,7 +77,9 @@ function (_Car) {
     key: "hello",
     value: function hello(x) {
       return "Hello!!" + x.carname;
-    }
+    } // name = '直接在类里面定义属性'
+    // static num = 22  // 
+
   }]);
 
   return Model;
@@ -91,3 +93,4 @@ function (_Car) {
 var myCar = new Model("Ford", "Mustang");
 console.log(myCar.show());
 console.log(Model.hello(myCar));
+console.log(myCar.name);
