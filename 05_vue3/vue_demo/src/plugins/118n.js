@@ -6,22 +6,33 @@ export default {
     // 注入一个全局可用的 $translate() 方法
     // $translate('greetings.hello')
     app.config.globalProperties.$translate = (key) => {
-      console.log('key = ')
-      console.log(key)
+      // console.log('key = ')
+      // console.log(key)
       // 获取 `options` 对象的深层属性
       // 使用 `key` 作为索引    
 
       // 一个以options为初始值，以key.split('.')元素为数组调用reduce方法
-      return key.split('.').reduce((total, item) => {
 
-        /* ['greetings', 'hello'].reduce
+      /* ['greetings', 'hello'].reduce
         total = { greetings: {hello: 'Bonjour!'} }, value =  greetings
         total = {hello: 'Bonjour!'}, value =  hello
+        total = Bonjour!
         */
-        console.log('total = ', total)
-        console.log('value = ', item)
+
+      return key.split('.').reduce(func, options)
+
+      function func(total, item) {
+        // console.log('total = ', total)
+        // console.log('value = ', item)
         if (total) return total[item]
-      }, options)
+      }
+
+
+      // return key.split('.').reduce((total, item) => {
+      //   console.log('total = ', total)
+      //   console.log('value = ', item)
+      //   if (total) return total[item]
+      // }, options)
     }
   }
 }

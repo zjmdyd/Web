@@ -39,8 +39,10 @@ import HelloWorld from './components/vue3-007.vue'    // watch()
 // import HelloWorld from './components/vue3-013.vue'
 // import HelloWorld from './components/vue3-014.vue'
 // import HelloWorld2 from './components/vue3-015.vue' // export
-import HelloWorld2 from './components/vue3-016.vue' // 自定义指令
-// import HelloWorld2 from './components/vue3-017.vue' // 自定义指令
+// import HelloWorld2 from './components/vue3-016.vue' // 自定义指令
+// import HelloWorld2 from './components/vue3-017.vue' // 自定义全局属性 & getCurrentInstance
+// import HelloWorld2 from './components/vue3-018.vue' // Proxy
+import HelloWorld2 from './components/vue3-019.vue' // Proxy
 
 import { computed, ref, onErrorCaptured, reactive} from 'vue'
 import { useStore } from 'vuex'

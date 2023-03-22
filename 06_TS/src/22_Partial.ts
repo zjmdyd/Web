@@ -3,6 +3,14 @@ interface Todo {
   description: string
 }
 
+/**
+ * Make all properties in T optional
+ * 
+ * type Partial<T> = {
+ * [P in keyof T]?: T[P];
+};
+ */
+
 type PartialTodo = Partial<Todo>
 
 function updateTodo(todo: Todo, fieldsToUpdate: PartialTodo) {
@@ -14,8 +22,20 @@ const todo1_1 = {
   description: 'clear clutter'
 }
 
-const todo1_2 = updateTodo(todo1_1, {description: 'throw out trash'})
-console.log(todo1_2)
+const todo1_2: PartialTodo = {
+  // title: 'org task',
+  description: 'throw out trash'
+}
+
+const todo1 = updateTodo(todo1_1, todo1_2)
+console.log(todo1)
+
+/**
+ * Make all properties in T required
+ * type Required<T> = {
+ * [P in keyof T]-?: T[P];
+* };
+ */
 
 type RequiredTodo = Required<Todo>
 
@@ -28,5 +48,10 @@ const todo2_1 = {
   description: 'clear clutter'
 }
 
-const todo2_2 = updateTodo2(todo2_1, {title:'this is RequiredTodo', description: 'throw out trash'})
-console.log(todo2_2)
+const todo2_2: RequiredTodo = {
+  title: 'this is RequiredTodo',
+  description: 'throw out trash agein'
+}
+
+const todo2 = updateTodo2(todo2_1, todo2_2)
+console.log(todo2)

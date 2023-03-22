@@ -4,6 +4,7 @@
 reduce() 方法在每个数组元素上运行函数，以生成（减少它）单个值。
 reduce() 方法在数组中从左到右工作。另请参阅 reduceRight()。
 reduce() 方法不会减少原始数组。
+reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值
 */
 var numbers1 = [45, 4, 9, 16, 25];
 var sum = numbers1.reduce(myFunction);
