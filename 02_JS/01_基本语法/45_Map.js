@@ -17,6 +17,7 @@ fruits.set(bananas, 300);
 fruits.set(oranges, 200);
 */
 // 创建新的 Map
+// 初始化Map需要一个二维数组，或者直接初始化一个空Map
 const fruits = new Map([
   [apples, 500],
   [bananas, 300],
