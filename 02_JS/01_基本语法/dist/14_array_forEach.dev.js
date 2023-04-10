@@ -42,3 +42,8 @@ arr.every(function (item) {
   console.log(item);
   return item != 3; // every条件不满足时，every方法会跳出
 });
+arr.forEach(function (item) {
+  item = item * 2;
+}); // [ 1, 2, 3, 4, 5 ] -->ary未改变
+
+console.log(arr, '-->ary');
