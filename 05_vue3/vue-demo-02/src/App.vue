@@ -28,7 +28,7 @@
 import HelloWorld from './components/vue3-Child.vue'     // defineProps传值
 import Child1 from './components/vue3-Child1.vue'     // defineProps传值
 import Child2 from './components/vue3-Child2.vue'     // defineProps传值
-import HelloWorld2 from './components/vue3-018.vue'        // 
+import HelloWorld2 from './components/vue3-013.vue'        // 
 
 
 import { onMounted, computed, ref, provide } from 'vue';

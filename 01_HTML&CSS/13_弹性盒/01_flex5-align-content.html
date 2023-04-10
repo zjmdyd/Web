@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title></title>
 	<style type="text/css">
-	* {margin: 0; padding: 0;}
-	.box {border: 1px #f00 solid; display: flex; flex-wrap: wrap; height: 600px; align-content: space-between;}
-	/*align-content: 默认为stretch; align-content: flex-start/flex-end侧轴的起点和终点开始*/
-	/* align-content: space-between/space-around; center*/
-	section {width: 50px; height: 50px; border: 1px #000 solid;}
-</style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.box {
+			border: 1px #f00 solid;
+			display: flex;
+			flex-wrap: wrap;
+			height: 600px;
+			width: 300px;
+			align-content: space-between;
+		}
+
+		/*align-content: 默认为stretch; align-content: flex-start/flex-end侧轴的起点和终点开始*/
+		/* align-content: space-between/space-around; center*/
+
+		/* 
+		flex-start：与交叉轴的起点对齐。
+		flex-end：与交叉轴的终点对齐。
+		center：与交叉轴的中点对齐。
+		space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+		space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+		stretch（默认值）：轴线占满整个交叉轴。
+		*/
+		section {
+			width: 50px;
+			height: 50px;
+			border: 1px #000 solid;
+		}
+	</style>
 </head>
+
 <body>
 	<div class="box">
 		<section>1</section>
@@ -26,7 +53,8 @@
 		<section>12</section>
 		<section>13</section>
 		<section>14</section>
-		<section>15</section>
+		<!-- <section>15</section> -->
 	</div>
 </body>
+
 </html>

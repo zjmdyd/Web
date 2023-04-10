@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title></title>
 	<style type="text/css">
-		* {margin: 0; padding: 0; list-style: none;}
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
 		/* 单独定义一个元素的位置 */
-		ul {height: 100px; padding: 10px; background: #eee; display: flex;}
-		li {padding: 10px; margin: 10px; background: #ff0;}
-		li:nth-child(1) {align-self: auto;}
-		li:nth-child(2) {align-self: flex-start;}
-		li:nth-child(3) {align-self: flex-end;}
-		li:nth-child(4) {align-self: center;}
-		li:nth-child(5) {align-self: baseline; padding: 20px 10px;}
-		li:nth-child(6) {align-self: baseline;}
-		li:nth-child(7) {align-self: stretch;}
+		ul {
+			height: 100px;
+			padding: 0 10px;
+			background: #eee;
+			display: flex;
+			border: #f00 1px solid;
+		}
+
+		li {
+			padding: 0 10px;
+			margin: 0 10px;
+			background: #ff0;
+		}
+
+		li:nth-child(1) {
+			align-self: auto;
+		}
+
+		li:nth-child(2) {
+			align-self: flex-start;
+		}
+
+		li:nth-child(3) {
+			align-self: flex-end;
+		}
+
+		li:nth-child(4) {
+			align-self: center;
+		}
+
+		li:nth-child(5) {
+			align-self: baseline;
+			padding: 20px 10px;
+		}
+
+		li:nth-child(6) {
+			align-self: baseline;
+		}
+
+		li:nth-child(7) {
+			align-self: stretch;
+		}
+
+		/* 
+		align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。
+		默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch
+		*/
 	</style>
 </head>
+
 <body>
 	<ul>
 		<li>a</li>
@@ -28,4 +73,5 @@
 		<li>h</li>
 	</ul>
 </body>
+
 </html>

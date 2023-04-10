@@ -8,4 +8,13 @@ for (var i = 0; i < ary.length; i++) {
   }
 
   console.log(ary[i]);
-}
+} // continue的实现
+
+
+ary.forEach(function (item) {
+  if (item === 3) {
+    return; // 3的元素跳过
+  }
+
+  console.log(item);
+});

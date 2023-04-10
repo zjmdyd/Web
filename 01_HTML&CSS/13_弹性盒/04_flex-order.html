@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title></title>
 	<style type="text/css">
-		* {margin: 0; padding: 0; list-style: none;}
-		ul {width: 800px; height: 100px; background: #eee; display: flex;}
-		li {width: 100px; background: #ff0; margin-right: 20px; font-size: 36px;}
-		li:nth-child(3),li:nth-child(5) {order: 1} 
-		li:nth-child(1) {order: 2;}
-		li:nth-child(4) {order: -1;}
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		ul {
+			width: 800px;
+			height: 100px;
+			background: #eee;
+			display: flex;
+		}
+
+		li {
+			width: 100px;
+			background: #ff0;
+			margin-right: 20px;
+			font-size: 36px;
+		}
+
+		li:nth-child(3),
+		li:nth-child(5) {
+			order: 1
+		}
+
+		li:nth-child(1) {
+			order: 2;
+		}
+
+		li:nth-child(4) {
+			order: -1;
+		}
+
 		/*order值越大越靠后，可以为负值*/
 	</style>
 </head>
+
 <body>
 	<ul>
 		<li>1</li>
@@ -21,4 +50,5 @@
 		<li>5</li>
 	</ul>
 </body>
+
 </html>
